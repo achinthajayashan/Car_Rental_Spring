@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Kanit:wght@400&display=swap');
+*{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+}
+
+.navbar-expand-lg .navbar-collapse{
+    justify-content: flex-end;
+}
+
+.home1{
+    height: 95vh;
+    width: 100vw;
+    background-color: black;
+    /*margin-top: -5px;*/
+    background-image: url("/assets/img/bg_sec1_final.png");
+    background-size: cover;
+    background-position: center;
+    -moz-background-size: cover;
+}
+
+/*.imgB{*/
+/*    width: 100%;*/
+/*    height: 250px;*/
+/*    background-image: url("/assets/img/sec1Bg.png");*/
+/*    background-position: center;*/
+/*    background-size: cover;*/
+/*}*/
+
+#textSec1Div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.txt-big{
+    font-size: 60px;
+}
+
+#homePTxt{
+    font-size: 18px;
+    width: 40%;
+}
+
+#mainSecPrice{
+    font-size: 50px;
+    /*font-weight: 800;*/
+}
+
+#btnGetStart{
+    width: 150px;
+    font-size: 18px;
+}
