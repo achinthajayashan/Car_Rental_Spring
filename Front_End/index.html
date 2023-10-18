@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/styles/homePageStyle.css">
+
+
 </head>
 <body>
+
 
 <header>
     <nav class="navbar navbar-expand-lg bg-black ">
@@ -20,23 +23,24 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-primary menu-size" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">About Us</a>
+                        <a class="nav-link text-white menu-size" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Cars</a>
+                        <a class="nav-link text-white menu-size" href="#">Cars</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Ratings</a>
+                        <a class="nav-link text-white menu-size" href="#">Ratings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contact</a>
+                        <a class="nav-link text-white menu-size" href="#">Contact</a>
                     </li>
                 </ul>
-                <button class="btn btn-primary ms-3" type="button" >
-                    <a href="" class="text-decoration-none text-white"><i class="fa-solid fa-sign-in-alt me-2"></i>Sign In</a></button>
+
+                <button class="btn btn-primary ms-3" type="button" id="btnViewSignIn">
+                    <a class="text-decoration-none text-white menu-size"><i class="fa-solid fa-sign-in-alt me-2"></i>Sign In</a></button>
 
             </div>
 
@@ -59,13 +63,46 @@
             <button class="btn btn-primary mt-5" id="btnGetStart">Get Started</button>
         </div>
     </section>
+
+    <section class="container-fluid bg-transparent position-fixed fixed-top z-2" id="loginBG">
+            <div class="bg-white d-flex z-3 rounded" id="loginMainDiv">
+
+                <div class="container" id="loginImgDiv"></div>
+                <div id="loginTextDiv">
+                    <h2 class="mb-5">Welcome Back</h2>
+
+                    <input class="input mb-3" placeholder="User Name" type="text">
+                    <input class="input mb-1" placeholder="Password" type="password">
+                    <div id="forgotDiv" class="mb-4">
+                        <a class="text-primary mt-1" href="#">forgot password</a>
+                    </div>
+
+
+                    <button class="button btn btn-primary">
+                        Sign In
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                            <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    <p class="mt-4 mb-0">Don't Have An Account</p>
+                    <a class="mt-0" href="#">Register Now !</a>
+
+                    <div class="container bg-primary mt-5 mb-3" id="lineBreak"></div>
+                    <p id="closeLogin" class="text-danger"><i class="fa-solid fa-circle-xmark me-2"></i>Close</p>
+                </div>
+
+            </div>
+    </section>
+
 </main>
 
 <footer>
 
 </footer>
-
+<script src="assets/jquery-3.7.0.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/fontawesome/js/all.min.js"></script>
+<script src="controller/homePageController.js"></script>
 </body>
 </html>
