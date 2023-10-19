@@ -7,3 +7,8 @@ $('#btnViewSignIn').click(function () {
 $('#closeLogin').click(function () {
     $('#loginBG').hide();
 });
+
+$('#btnSign').click(function () {
+    window.open("../pages/adminDashboard.html","_self");
+
+});
