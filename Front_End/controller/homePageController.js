@@ -10,5 +10,4 @@ $('#closeLogin').click(function () {
 
 $('#btnSign').click(function () {
     window.open("../pages/adminPanel.html","_self");
-
 });

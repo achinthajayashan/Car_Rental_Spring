@@ -84,3 +84,7 @@ main{
 .btn-regForm{
     width: 50%;
 }
+
+#backToSignIn{
+    cursor: pointer;
+}
