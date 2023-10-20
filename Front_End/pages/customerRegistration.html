@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer SignUp</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/customerRegisterStyle.css">
+</head>
+<body>
+<main>
+    <section id="regBg" class="bg-transparent d-flex justify-content-center align-items-center">
+        <section id="signUpSec" class="bg-white ms-5 rounded">
+            <h4 class="text-center mt-5 text-primary">Customer Registration</h4>
+            <form>
+                <div class="d-flex container mt-5">
+                    <input type="text" name="" id="txtCusName" placeholder="Full Name" class="input me-3 ms-3 inputFull">
+                </div>
+
+                <div class="d-flex container mt-4">
+                    <input type="text" name="" id="txtCusAddress" placeholder="Address" class="input me-3 ms-3 inputFull">
+                </div>
+
+                <div class="d-flex container mt-4">
+                    <input type="email" name="" id="txtCusEmail" placeholder="Email" class="input me-3 ms-3">
+                    <input type="tel" name="" id="txtCusContact" placeholder="Mobile Number" class="input me-3 ms-3">
+                </div>
+
+                <div class="d-flex container mt-4">
+                    <input type="text" name="" id="txtDrLicence" placeholder="Driving Licence Number" class="input me-3 ms-3">
+                </div>
+                <p class="mt-5 text-primary text-center">Upload photos Of your Driving License (Front and Back)</p>
+                <div class="d-flex container mt-4" id="licenceUploaderDiv">
+                    <div>
+                        <input type="file" name="" id="fileDrLicenceF" placeholder="Front Image DL" class="input ms-3 mb-3 fileInput">
+                        <input type="file" name="" id="fileDrLicenceB" placeholder="Back Image DL" class="input ms-3 fileInput">
+                    </div>
+                    
+                    <div id="fieUploadFlex" class="d-flex">
+                        <img src="" alt="" class="licenceImg me-3" >
+                        <img src="" alt="" class="licenceImg me-5">
+                    </div>
+
+                </div>
+
+<!--                <div class="container bg-secondary mt-4" id="lineBlue"></div>-->
+
+                <p class="mt-5 text-primary text-center">Create a User Name and Password For Your Account</p>
+
+                <div class="d-flex container mt-4">
+                    <input type="text" name="" id="txtCusUsername" placeholder="User Name" class="input me-3 ms-3">
+                    <input type="password" name="" id="txtCusPassword" placeholder="Password" class="input me-3 ms-3">
+                </div>
+
+                <div class="d-flex container mt-5">
+                    <button type="submit" class="btn btn-primary btn-regForm ms-3 me-3">Submit</button>
+                    <button type="reset" class="btn btn-secondary btn-regForm ms-3 me-3">Clear</button>
+                </div>
+            </form>
+        </section>
+
+    </section>
+</main>
+
+
+
+<script src="../assets/jquery-3.7.0.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/fontawesome/js/all.min.js"></script>
+<script src="../controller/customerRegisterController.js"></script>
+</body>
+</html>
