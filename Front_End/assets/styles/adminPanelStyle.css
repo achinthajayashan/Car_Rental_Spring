@@ -47,3 +47,34 @@ main{
 .nav-link{
     width: 200px;
 }
+
+#dashboardSec{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+#countsMainDiv{
+    width: 100%;
+    height: 120px;
+    flex-direction: row;
+}
+
+.countDiv{
+    width: 23%;
+    height: 100%;
+    box-shadow: 1px 2px 4px grey;
+    border-radius: 5px;
+    flex-direction: row;
+}
+
+.countNum{
+    width: 70%;
+    height: 100%;
+}
+
+.iconOfCount{
+    width: 30%;
+    height: 100%;
+    font-size: 40px;
+}
