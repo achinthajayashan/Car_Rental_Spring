@@ -9,6 +9,6 @@ $('#closeLogin').click(function () {
 });
 
 $('#btnSign').click(function () {
-    window.open("../pages/adminDashboard.html","_self");
+    window.open("../pages/adminPanel.html","_self");
 
 });

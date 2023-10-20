@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+  <meta content="width=device-width initial-scale=1" name="viewport">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../assets/styles/adminPanelStyle.css">
+
+</head>
+<body>
+
+<main class="bg-success">
+    <section id="sideBarSec" class="bg-dark">
+        <img src="../assets/logo/logoCarRentalwc2.png" id="logo" class="ms-4 mt-3">
+
+        <div class="d-flex align-items-start container mt-5">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active text-light text-start" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa-solid fa-house me-3"></i>Dashboard</button>
+                <button class="nav-link text-light text-start" id="v-pills-customers-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa-solid fa-users me-3"></i>Customers</button>
+                <button class="nav-link text-light text-start" id="v-pills-cars-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false"><i class="fa-solid fa-car me-3"></i>Cars</button>
+                <button class="nav-link text-light text-start" id="v-pills-drivers-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-drivers-license me-3"></i>Drivers</button>
+                <button class="nav-link text-light text-start" id="v-pills-rentals-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-calendar-alt me-3"></i>Rentals</button>
+                <button class="nav-link text-light text-start" id="v-pills-Payments-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-cash-register me-3"></i>Payments</button>
+                <button class="nav-link text-light text-start" id="v-pills-reports-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-file-alt me-3"></i>Reports</button>
+
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-customers" role="tabpanel" aria-labelledby="v-pills-customers-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-cars" role="tabpanel" aria-labelledby="v-pills-cars-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-drivers" role="tabpanel" aria-labelledby="v-pills-drivers-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-rentals" role="tabpanel" aria-labelledby="v-pills-rentals-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-payments" role="tabpanel" aria-labelledby="v-pills-payments-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab" tabindex="0">...</div>
+
+            </div>
+        </div>
+
+    </section>
+    <section id="oSideBarSec" class="bg-white">
+        <section id="topBar" class="bg-dark"></section>
+        <section id="containSec">
+            <section id="dashboardSec"></section>
+            <section id="customersSec"></section>
+            <section id="carsSec"></section>
+            <section id="driversSec"></section>
+            <section id="rentalsSec"></section>
+            <section id="paymentsSec"></section>
+            <section id="reportsSec"></section>
+<!--            <section id="dashboardSec"></section>-->
+        </section>
+    </section>
+
+</main>
+
+
+<script src="../assets/jquery-3.7.0.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/fontawesome/js/all.min.js"></script>
+<script src="../controller/homePageController.js"></script>
+</body>
+</html>
