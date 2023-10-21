@@ -9,31 +9,21 @@
   <link rel="stylesheet" href="../assets/styles/adminPanelStyle.css">
 
 </head>
-<body>
+<body class="overflow-hidden">
 
 <main class="bg-success">
     <section id="sideBarSec" class="bg-dark">
         <img src="../assets/logo/logoCarRentalwc2.png" id="logo" class="ms-4 mt-3">
 
         <div class="d-flex align-items-start container mt-5">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active text-light text-start" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa-solid fa-house me-3"></i>Dashboard</button>
-                <button class="nav-link text-light text-start" id="v-pills-customers-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa-solid fa-users me-3"></i>Customers</button>
-                <button class="nav-link text-light text-start" id="v-pills-cars-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false"><i class="fa-solid fa-car me-3"></i>Cars</button>
-                <button class="nav-link text-light text-start" id="v-pills-drivers-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-drivers-license me-3"></i>Drivers</button>
-                <button class="nav-link text-light text-start" id="v-pills-rentals-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-calendar-alt me-3"></i>Rentals</button>
-                <button class="nav-link text-light text-start" id="v-pills-Payments-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-cash-register me-3"></i>Payments</button>
-                <button class="nav-link text-light text-start" id="v-pills-reports-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-file-alt me-3"></i>Reports</button>
-
-            </div>
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-customers" role="tabpanel" aria-labelledby="v-pills-customers-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-cars" role="tabpanel" aria-labelledby="v-pills-cars-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-drivers" role="tabpanel" aria-labelledby="v-pills-drivers-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-rentals" role="tabpanel" aria-labelledby="v-pills-rentals-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-payments" role="tabpanel" aria-labelledby="v-pills-payments-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab" tabindex="0">...</div>
+            <div class="nav flex-column nav-pills me-3 ms-3" aria-orientation="vertical">
+                <button class="nav-link active text-light text-start mt-3" id="dashboard-tab" data-bs-toggle="pill" ><i class="fa-solid fa-house me-4"></i>Dashboard</button>
+                <button class="nav-link text-light text-start mt-3" id="customers-tab" data-bs-toggle="pill"><i class="fa-solid fa-users me-4"></i>Customers</button>
+                <button class="nav-link text-light text-start mt-3" id="cars-tab" data-bs-toggle="pill"><i class="fa-solid fa-car me-4"></i>Cars</button>
+                <button class="nav-link text-light text-start mt-3" id="drivers-tab" data-bs-toggle="pill"><i class="fa-solid fa-drivers-license me-4"></i>Drivers</button>
+                <button class="nav-link text-light text-start mt-3" id="rentals-tab" data-bs-toggle="pill"><i class="fa-solid fa-calendar-alt me-4"></i>Rentals</button>
+                <button class="nav-link text-light text-start mt-3" id="Payments-tab" data-bs-toggle="pill"><i class="fa-solid fa-cash-register me-4"></i>Payments</button>
+                <button class="nav-link text-light text-start mt-3" id="reports-tab" data-bs-toggle="pill"><i class="fa-solid fa-file-alt me-4"></i>Reports</button>
 
             </div>
         </div>
@@ -44,7 +34,9 @@
             <div id="btnSignOut"><i class="fa-solid fa-sign-out-alt text-light me-5 mt-3 topNavText" ></i></div>
         </section>
         <section id="containSec">
-            <section id="dashboardSec" class="container-fluid d-flex">
+
+
+            <section id="dashboardSec" class="container-fluid contentSections bg-white z-0">
                 <div id="countsMainDiv" class="container-fluid d-flex mt-4">
                     <div class="countDiv me-4 d-flex">
                         <div class="countNum ms-4 mt-3">
@@ -77,12 +69,98 @@
                     </div>
                 </div>
             </section>
-            <section id="customersSec" class="container-fluid"></section>
-            <section id="carsSec" class="container-fluid"></section>
-            <section id="driversSec" class="container-fluid"></section>
-            <section id="rentalsSec" class="container-fluid"></section>
-            <section id="paymentsSec" class="container-fluid"></section>
-            <section id="reportsSec" class="container-fluid"></section>
+            <section id="customersSec" class="container-fluid contentSections bg-white z-2">
+                <table class="table mt-3">
+                    <thead class="table-header bg-primary text-white">
+                    <td>Customer ID</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>Contact</td>
+                    <td>Email</td>
+                    </thead>
+                </table>
+            </section>
+            <section id="carsSec" class="container-fluid contentSections d-flex">
+                <div id="carDataInsertDiv" class="rounded-2 me-3 mt-3">
+                    <h5 class="text-primary text-center mt-2">Car Registration Form</h5>
+                    <form>
+                        <div class="d-flex container mt-4">
+                            <input type="text" name="" id="txtCarId" placeholder="Car ID" class="input me-3 ms-3">
+                            <input type="text" name="" id="txtCarRegNum" placeholder="Registration Number" class="input me-3 ms-3">
+                        </div>
+
+                        <div class="d-flex container mt-4">
+                            <input type="text" name="" id="txtCarBrand" placeholder="Brand" class="input me-3 ms-3">
+                            <select type="" name="" id="txtCarType" class="input me-3 ms-3">
+                                <option value="null" selected>Type Of The Car</option>
+                                <option value="general">General</option>
+                                <option value="premium">Premium</option>
+                                <option value="luxury">Luxury</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex container mt-4">
+                            <input type="text" name="" id="txtCarNumPassengers" placeholder="Number Of Passengers" class="input me-3 ms-3">
+                            <input type="text" name="" id="txtCarColour" placeholder="Color" class="input me-3 ms-3">
+                        </div>
+
+                        <div class="d-flex container mt-4">
+                            <select type="" name="" id="txtCarTransmission" class="input me-3 ms-3">
+                                <option value="null" selected>Transmission Type</option>
+                                <option value="manual">Manual</option>
+                                <option value="auto">Automatic</option>
+                            </select>
+                            <select type="" name="" id="txtCarFuel" class="input me-3 ms-3">
+                                <option value="null" selected>Fuel Type</option>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex container mt-3">
+                            <input type="number" name="" id="txtExtraKMPrice" placeholder="Extra Mileage Price" class="input me-3 ms-3">
+                            <input type="number" name="" id="txtcurrentMileage" placeholder="Current Mileage" class="input me-3 ms-3">
+                        </div>
+
+                        <p class="text-muted mt-4 ms-4 container">Daily Rates</p>
+                        <div class="d-flex container mt-3">
+                            <input type="number" name="" id="txtDailyRate" placeholder="Free Mileage" class="input me-3 ms-3">
+                            <input type="number" name="" id="txtCarDayPrice" placeholder="Price" class="input me-3 ms-3">
+                        </div>
+
+                        <p class="text-muted mt-4 ms-4 container">Monthly Rates</p>
+                        <div class="d-flex container mt-3">
+                            <input type="number" name="" id="txtFreeMileage" placeholder="Free Mileage" class="input me-3 ms-3">
+                            <input type="number" name="" id="txtCarMonthlyPrice" placeholder="Price" class="input me-3 ms-3">
+                        </div>
+
+                        <p class="text-muted mt-4 ms-4 container mb-0">Insert Four Images Of Car(Front/Rear/Side?Interior)</p><br>
+                        <div class="d-flex container mt-0">
+                            <input type="file" name="" id="imgFront" class="input form-control me-3 ms-3">
+                            <input type="file" name="" id="imgRear" class="input form-control  me-3 ms-3">
+                        </div>
+
+                        <div class="d-flex container mt-1">
+                            <input type="file" name="" id="imgFront" class="input form-control me-3 ms-3">
+                            <input type="file" name="" id="imgRear" class="input form-control  me-3 ms-3">
+                        </div>
+
+                        <div class="d-flex container mt-5">
+                            <button type="button" name="" id="txtExtraKMPrice" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
+                            <button type="button" name="" id="txtcurrentMileage"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div id="carDetailTableDiv" class="rounded-2 mt-3">
+
+                </div>
+            </section>
+            <section id="driversSec" class="container-fluid contentSections"></section>
+            <section id="rentalsSec" class="container-fluid contentSections"></section>
+            <section id="paymentsSec" class="container-fluid contentSections"></section>
+            <section id="reportsSec" class="container-fluid contentSections"></section>
 <!--            <section id="dashboardSec"></section>-->
         </section>
     </section>
