@@ -141,20 +141,28 @@
                         </div>
 
                         <div class="d-flex container mt-1">
-                            <input type="file" name="" id="imgFront" class="input form-control me-3 ms-3">
-                            <input type="file" name="" id="imgRear" class="input form-control  me-3 ms-3">
+                            <input type="file" name="" id="imgside" class="input form-control me-3 ms-3">
+                            <input type="file" name="" id="imgInterior" class="input form-control  me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-5">
-                            <button type="button" name="" id="txtExtraKMPrice" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
-                            <button type="button" name="" id="txtcurrentMileage"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
+                            <button type="button" name="" id="btnAddCar" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
+                            <button type="button" name="" id="btnClrCar"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
                         </div>
 
 
                     </form>
                 </div>
-                <div id="carDetailTableDiv" class="rounded-2 mt-3">
-
+                <div id="carDetailTableDiv" class="rounded-2 mt-3 container">
+                    <table class="table mt-3">
+                        <thead class="table-header bg-primary text-white">
+                        <td>Car ID</td>
+                        <td>Type</td>
+                        <td>Brand</td>
+                        <td>Daily Rate</td>
+<!--                        <td>Email</td>-->
+                        </thead>
+                    </table>
                 </div>
             </section>
             <section id="driversSec" class="container-fluid contentSections"></section>
