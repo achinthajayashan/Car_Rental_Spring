@@ -99,6 +99,7 @@ main{
 }
 
 #carsSec{
+    display: flex;
     flex-direction: row;
 }
 
@@ -141,3 +142,26 @@ main{
 .car-btn{
     width: 100%;
 }
+
+#driversSec{
+    display: flex;
+    flex-direction: row;
+}
+
+#driverDataInsertDiv{
+    width: 40%;
+    height: 95%;
+    box-shadow: 0px 0px 1px grey;
+}
+
+#driverDetailTableDiv{
+    width: 60%;
+    height: 95%;
+    box-shadow: 0px 0px 1px grey;
+}
+
+.licenceImg{
+    width: 200px;
+    height: 100px;
+}
+
