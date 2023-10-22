@@ -3,10 +3,11 @@ $('#dashboardSec').show();
 $('#carsSec').hide();
 $('#driversSec').hide();
 $('#rentalsSec').hide();
+$('#paymentsSec').hide();
 
-// $('#btnSignOut').click(function () {
-//     window.history.back();
-// });
+$('#btnSignOut').click(function () {
+    window.history.back();
+});
 
 $('#customers-tab').click(function (e) {
     console.log("clicked");
@@ -15,7 +16,7 @@ $('#customers-tab').click(function (e) {
     $('#carsSec').hide();
     $('#driversSec').hide();
     $('#rentalsSec').hide();
-    // $('#customersSec').show();
+    $('#paymentsSec').hide();
 });
 
 $('#dashboard-tab').click(function (e) {
@@ -25,7 +26,7 @@ $('#dashboard-tab').click(function (e) {
     $('#carsSec').hide();
     $('#driversSec').hide();
     $('#rentalsSec').hide();
-    // $('#customersSec').show();
+    $('#paymentsSec').hide();
 });
 
 $('#cars-tab').click(function (e) {
@@ -35,7 +36,7 @@ $('#cars-tab').click(function (e) {
     $('#carsSec').show();
     $('#driversSec').hide();
     $('#rentalsSec').hide();
-    // $('#customersSec').show();
+    $('#paymentsSec').hide();
 });
 
 $('#drivers-tab').click(function (e) {
@@ -45,7 +46,7 @@ $('#drivers-tab').click(function (e) {
     $('#carsSec').hide();
     $('#driversSec').show();
     $('#rentalsSec').hide();
-    // $('#customersSec').show();
+    $('#paymentsSec').hide();
 });
 
 rentalsSec
@@ -57,6 +58,16 @@ $('#rentals-tab').click(function (e) {
     $('#carsSec').hide();
     $('#driversSec').hide();
     $('#rentalsSec').show();
-    // $('#customersSec').show();
+    $('#paymentsSec').hide();
+});
+
+$('#Payments-tab').click(function (e) {
+    console.log("clicked");
+    $("#dashboardSec").hide();
+    $('#customersSec').hide();
+    $('#carsSec').hide();
+    $('#driversSec').hide();
+    $('#rentalsSec').hide();
+    $('#paymentsSec').show();
 });
 
