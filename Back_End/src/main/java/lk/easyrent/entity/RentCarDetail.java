@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
-public class RentCarDetail {
+public class RentCarDetail implements Serializable {
 
     @Id
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
@@ -27,7 +28,7 @@ public class RentCarDetail {
     @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
     private Driver driverID;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "paymentID",referencedColumnName = "paymentID",nullable = false)
     private Payment paymentID;
 }
