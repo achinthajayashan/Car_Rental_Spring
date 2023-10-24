@@ -1,10 +1,9 @@
-package lk.easyrent.entity;
+package lk.easycar.rent.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.context.annotation.Primary;
 
 import javax.persistence.*;
 
@@ -15,6 +14,7 @@ import javax.persistence.*;
 @ToString
 public class Customer {
     @Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String customerID;
     private String name;
     private String address;
@@ -23,8 +23,7 @@ public class Customer {
     private String licenseNo;
     private String frontImage;
     private String backImage;
-    @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "userName",referencedColumnName = "userName",nullable = false)
-    private User userName;
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 
 }

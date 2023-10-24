@@ -1,4 +1,4 @@
-package lk.easyrent.entity;
+package lk.easycar.rent.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

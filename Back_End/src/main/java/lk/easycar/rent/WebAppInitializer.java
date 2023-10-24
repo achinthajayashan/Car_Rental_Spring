@@ -1,7 +1,7 @@
-package lk.easyrent;
+package lk.easycar.rent;
 
-import lk.easyrent.config.WebAppConfig;
-import lk.easyrent.config.WebRootConfig;
+import lk.easycar.rent.config.WebAppConfig;
+import lk.easycar.rent.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
