@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
 
     @Autowired
-    CustomerService service;
+    private CustomerService service;
 
-//    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customerDTO, @ModelAttribute UserDTO user){
         System.out.println(customerDTO);
         customerDTO.setUser(user);
         System.out.println(customerDTO);
         service.addCustomer(customerDTO);
-        return new ResponseUtil("Ok","Successfully Added",customerDTO);
+        return new ResponseUtil("Ok","Successfully Added",null);
     }
 }

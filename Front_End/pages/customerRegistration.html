@@ -13,7 +13,7 @@
     <section id="regBg" class="bg-transparent d-flex justify-content-center align-items-center">
         <section id="signUpSec" class="bg-white ms-5 rounded">
             <h4 class="text-center mt-4 text-primary">Customer Registration</h4>
-            <form action="" id="cusRegForm">
+            <form id="cusRegForm" role="form" action="/customer" enctype="multipart/form-data" method="post">
                 <div class="d-flex container mt-5">
                     <input type="text" name="customerID" id="txtCusID" placeholder="Customer ID" class="input me-3 ms-3">
                     <input type="text" name="name" id="txtCusName" placeholder="Full Name" class="input me-3 ms-3">
@@ -33,15 +33,15 @@
                 </div>
                 <p class="mt-5 text-primary text-center">Upload photos Of your Driving License (Front and Back)</p>
                 <div class="d-flex container mt-4" id="licenceUploaderDiv">
-                    <div>
-                        <input type="file" name="cusFrontImage" id="frontImage" placeholder="Front Image DL" class="input ms-3 mb-3 fileInput form-control">
-                        <input type="file" name="cusBackImage" id="backImage" placeholder="Back Image DL" class="input ms-3 fileInput form-control">
-                    </div>
+<!--                    <div>-->
+                        <input type="file"  id="frontImage" name="frontImage" class="input ms-3 mb-3 fileInput form-control" accept="image/*" >
+                        <input type="file"  id="backImage" name="backImage" class="input ms-3 fileInput form-control" accept="image/*">
+<!--                    </div>-->
                     
-                    <div id="fieUploadFlex" class="d-flex">
-                        <img src="" alt="" class="licenceImg me-3 ms-5" >
-                        <img src="" alt="" class="licenceImg me-5">
-                    </div>
+<!--                    <div id="fieUploadFlex" class="d-flex">-->
+<!--                        <img src="" alt="" class="licenceImg me-3 ms-5" >-->
+<!--                        <img src="" alt="" class="licenceImg me-5">-->
+<!--                    </div>-->
 
                 </div>
 
