@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void addCustomer(CustomerDTO dto) {
         Customer map = mapper.map(dto, Customer.class);
-        map.setUser(new User(dto.getUser().getUsername(),dto.getUser().getPassword(),"customer"));
+        map.setUser(new User(dto.getUser().getUserName(),dto.getUser().getPassword(),"customer"));
         MultipartFile img_front = dto.getFrontImage();
         MultipartFile img_back = dto.getBackImage();
 

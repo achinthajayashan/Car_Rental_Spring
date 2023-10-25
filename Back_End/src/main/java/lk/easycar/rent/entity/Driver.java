@@ -21,10 +21,8 @@ public class Driver {
     private String contactNo;
     private String frontImage;
     private String backImage;
-
-    @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "userName",referencedColumnName = "userName",nullable = false)
-    private User userName;
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
 
 
 }

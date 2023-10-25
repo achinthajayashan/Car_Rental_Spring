@@ -24,8 +24,13 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void addDriver(DriverDTO driverDTO) {
-        Driver driver = new Driver(driverDTO.getDriverID(), driverDTO.getDrivingLicenceNo(), driverDTO.getDriverName(),  driverDTO.getEmail(), driverDTO.getContactNo(),"","",new User(driverDTO.getUser().getUsername(),driverDTO.getUser().getPassword(),driverDTO.getUser().getRole()));
 
+        Driver map =mapper.map(driverDTO,Driver.class);
+        map.setUser(new User(driverDTO.getUser().getUserName(),driverDTO.getUser().getPassword(),"driver"));
+
+        System.out.println(map);
+
+        driverRepo.save(map);
 
     }
 }
