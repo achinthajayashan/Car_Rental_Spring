@@ -83,15 +83,15 @@
             <section id="carsSec" class="container-fluid contentSections">
                 <div id="carDataInsertDiv" class="rounded-2 me-3 mt-3">
                     <h5 class="text-primary text-center mt-2">Car Registration Form</h5>
-                    <form>
+                    <form id="carRegForm" role="form" action="/car" enctype="multipart/form-data" method="post">
                         <div class="d-flex container mt-4">
-                            <input type="text" name="" id="txtCarId" placeholder="Car ID" class="input me-3 ms-3">
-                            <input type="text" name="" id="txtCarRegNum" placeholder="Registration Number" class="input me-3 ms-3">
+                            <input type="text" name="carID" id="txtCarId" placeholder="Car ID" class="input me-3 ms-3">
+                            <input type="text" name="regNo" id="txtCarRegNum" placeholder="Registration Number" class="input me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-4">
-                            <input type="text" name="" id="txtCarBrand" placeholder="Brand" class="input me-3 ms-3">
-                            <select type="" name="" id="txtCarType" class="input me-3 ms-3">
+                            <input type="text" name="brand" id="txtCarBrand" placeholder="Brand" class="input me-3 ms-3">
+                            <select  name="type" id="txtCarType" class="input me-3 ms-3">
                                 <option value="null" selected>Type Of The Car</option>
                                 <option value="general">General</option>
                                 <option value="premium">Premium</option>
@@ -100,17 +100,17 @@
                         </div>
 
                         <div class="d-flex container mt-4">
-                            <input type="text" name="" id="txtCarNumPassengers" placeholder="Number Of Passengers" class="input me-3 ms-3">
-                            <input type="text" name="" id="txtCarColour" placeholder="Color" class="input me-3 ms-3">
+                            <input type="text" name="passenger" id="txtCarNumPassengers" placeholder="Number Of Passengers" class="input me-3 ms-3">
+                            <input type="text" name="color" id="txtCarColour" placeholder="Color" class="input me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-4">
-                            <select type="" name="" id="txtCarTransmission" class="input me-3 ms-3">
+                            <select name="transmissionType" id="txtCarTransmission" class="input me-3 ms-3">
                                 <option value="null" selected>Transmission Type</option>
                                 <option value="manual">Manual</option>
                                 <option value="auto">Automatic</option>
                             </select>
-                            <select type="" name="" id="txtCarFuel" class="input me-3 ms-3">
+                            <select name="fuelType" id="txtCarFuel" class="input me-3 ms-3">
                                 <option value="null" selected>Fuel Type</option>
                                 <option value="petrol">Petrol</option>
                                 <option value="diesel">Diesel</option>
@@ -118,31 +118,41 @@
                         </div>
 
                         <div class="d-flex container mt-3">
-                            <input type="number" name="" id="txtExtraKMPrice" placeholder="Extra Mileage Price" class="input me-3 ms-3">
-                            <input type="number" name="" id="txtcurrentMileage" placeholder="Current Mileage" class="input me-3 ms-3">
+                            <input type="number" name="extraMileagePrice" id="txtExtraKMPrice" placeholder="Extra Mileage Price" class="input me-3 ms-3">
+                            <input type="number" name="currentMileage" id="txtcurrentMileage" placeholder="Current Mileage" class="input me-3 ms-3">
+                        </div>
+
+                        <div class="d-flex container mt-3">
+                            <input type="number" name="wavierPayment" id="txtWaiverPayment" placeholder="Current Mileage" class="input me-3 ms-3">
+
+                            <select name="availability" id="txtAvailability" class="input me-3 ms-3">
+                                <option value="null" selected>Availability</option>
+                                <option value="available">available</option>
+                                <option value="non-available">non-available</option>
+                            </select>
                         </div>
 
                         <p class="text-muted mt-4 ms-4 container">Daily Rates</p>
                         <div class="d-flex container mt-3">
-                            <input type="number" name="" id="txtDailyRate" placeholder="Free Mileage" class="input me-3 ms-3">
-                            <input type="number" name="" id="txtCarDayPrice" placeholder="Price" class="input me-3 ms-3">
+                            <input type="number" name="freeMileageDaily" id="txtDailyRate" placeholder="Free Mileage" class="input me-3 ms-3">
+                            <input type="number" name="freeMileageDailyPrice" id="txtCarDayPrice" placeholder="Price" class="input me-3 ms-3">
                         </div>
 
                         <p class="text-muted mt-4 ms-4 container">Monthly Rates</p>
                         <div class="d-flex container mt-3">
-                            <input type="number" name="" id="txtFreeMileage" placeholder="Free Mileage" class="input me-3 ms-3">
-                            <input type="number" name="" id="txtCarMonthlyPrice" placeholder="Price" class="input me-3 ms-3">
+                            <input type="number" name="freeMileageMonthly" id="txtFreeMileage" placeholder="Free Mileage" class="input me-3 ms-3">
+                            <input type="number" name="freeMileageMonthlyPrice" id="txtCarMonthlyPrice" placeholder="Price" class="input me-3 ms-3">
                         </div>
 
                         <p class="text-muted mt-4 ms-4 container mb-0">Insert Four Images Of Car(Front/Rear/Side?Interior)</p><br>
                         <div class="d-flex container mt-0">
-                            <input type="file" name="" id="imgFront" class="input form-control me-3 ms-3">
-                            <input type="file" name="" id="imgRear" class="input form-control  me-3 ms-3">
+                            <input type="file" name="frontImage" id="imgFront" class="input form-control me-3 ms-3">
+                            <input type="file" name="RearImage" id="imgRear" class="input form-control  me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-1">
-                            <input type="file" name="" id="imgside" class="input form-control me-3 ms-3">
-                            <input type="file" name="" id="imgInterior" class="input form-control  me-3 ms-3">
+                            <input type="file" name="sideImage" id="imgside" class="input form-control me-3 ms-3">
+                            <input type="file" name="interiorImage" id="imgInterior" class="input form-control  me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-5">
