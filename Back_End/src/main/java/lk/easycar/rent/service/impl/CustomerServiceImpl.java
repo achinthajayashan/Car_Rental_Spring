@@ -36,26 +36,23 @@ public class CustomerServiceImpl implements CustomerService {
 
         System.out.println(map);
 
-//        try {
-//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-//            File uploadsDir = new File(projectPath + "/uploads");
-//            uploadsDir.mkdir();
-//
-//            String fileName1 = img_front.getOriginalFilename();
-//            String fileName2 = img_back.getOriginalFilename();
-//            File file = new File(uploadsDir, fileName1);
-//            File file1 = new File(uploadsDir,fileName2);
-//
-//            img_front.transferTo(file);
-//            img_back.transferTo(file1);
-//
-//            map.setFrontImage("uploads/" + img_front.getOriginalFilename());
-//            map.setBackImage("uploads/" + img_back.getOriginalFilename());
-//
-//
-//        } catch (IOException | URISyntaxException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontImage().getOriginalFilename()));
+            dto.getBackImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBackImage().getOriginalFilename()));
+
+            map.setFrontImage("uploads/" + dto.getFrontImage().getOriginalFilename());
+            map.setBackImage("uploads/" + dto.getBackImage().getOriginalFilename());
+
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println(map);
         customerRepo.save(map);
