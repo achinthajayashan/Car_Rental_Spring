@@ -28,38 +28,37 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(CustomerDTO dto) {
-//        Customer map = mapper.map(dto, Customer.class);
-        Customer customer =new Customer(dto.getCustomerID(), dto.getName(), dto.getAddress(), dto.getEmail(), dto.getContactNo(), dto.getLicenseNo(),  "", "",new User(dto.getUser().getUsername(),dto.getUser().getPassword(),"Customer"));
-
+        Customer map = mapper.map(dto, Customer.class);
+        map.setUser(new User(dto.getUser().getUsername(),dto.getUser().getPassword(),"customer"));
         MultipartFile img_front = dto.getFrontImage();
         MultipartFile img_back = dto.getBackImage();
 
 
-        System.out.println(customer);
+        System.out.println(map);
 
-        try {
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            uploadsDir.mkdir();
+//        try {
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            uploadsDir.mkdir();
+//
+//            String fileName1 = img_front.getOriginalFilename();
+//            String fileName2 = img_back.getOriginalFilename();
+//            File file = new File(uploadsDir, fileName1);
+//            File file1 = new File(uploadsDir,fileName2);
+//
+//            img_front.transferTo(file);
+//            img_back.transferTo(file1);
+//
+//            map.setFrontImage("uploads/" + img_front.getOriginalFilename());
+//            map.setBackImage("uploads/" + img_back.getOriginalFilename());
+//
+//
+//        } catch (IOException | URISyntaxException e) {
+//            throw new RuntimeException(e);
+//        }
 
-            String fileName1 = img_front.getOriginalFilename();
-            String fileName2 = img_back.getOriginalFilename();
-            File file = new File(uploadsDir, fileName1);
-            File file1 = new File(uploadsDir,fileName2);
-
-            img_front.transferTo(file);
-            img_back.transferTo(file1);
-
-            customer.setFrontImage("uploads/" + img_front.getOriginalFilename());
-            customer.setBackImage("uploads/" + img_back.getOriginalFilename());
-
-
-        } catch (IOException | URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-
-        System.out.println(customer);
-        customerRepo.save(customer);
+        System.out.println(map);
+        customerRepo.save(map);
     }
 }
 
