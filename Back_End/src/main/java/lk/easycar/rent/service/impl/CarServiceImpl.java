@@ -1,16 +1,21 @@
 package lk.easycar.rent.service.impl;
 
 import lk.easycar.rent.dto.CarDTO;
+import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.entity.Car;
+import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.repo.CarRepo;
 import lk.easycar.rent.service.CarService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -48,5 +53,12 @@ public class CarServiceImpl implements CarService {
 
         System.out.println(map);
         carRepo.save(map);
+    }
+
+    @Override
+    public ArrayList<CarDTO> getAllCars() {
+        List<Car> all = carRepo.findAll();
+        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        }.getType());
     }
 }

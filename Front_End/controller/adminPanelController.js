@@ -72,30 +72,4 @@ $('#Payments-tab').click(function (e) {
 });
 
 
-// ----------------------------------
-// driver swction
-
-
-
-
-// -------------------------------------------------
-
-$('#btnAddCar').click(function () {
-    let formData = new FormData($("#carRegForm")[0]);
-    console.log(formData);
-    $.ajax({
-        url:"http://localhost:8080/Car_rent/Back_End_war/car",
-        method: "post",
-        data: formData,
-        async:true,
-        contentType: false,
-        processData: false,
-        success: function (res) {
-            alert(res.message);
-        },
-        error: function (error) {
-            alert(error.responseJSON.message);
-        }
-    });
-});
 

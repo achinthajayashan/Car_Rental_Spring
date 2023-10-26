@@ -22,4 +22,9 @@ public class CarController {
         carService.addCar(carDTO);
         return new ResponseUtil("Ok","Successfully Added",null);
     }
+
+    @GetMapping
+    public ResponseUtil getAllCars(){
+        return new ResponseUtil("OK","Successfully Loaded",carService.getAllCars());
+    }
 }
