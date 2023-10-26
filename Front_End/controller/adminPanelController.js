@@ -76,24 +76,7 @@ $('#Payments-tab').click(function (e) {
 // driver swction
 
 
-$('#btnSaveDriver').click(function () {
-    let formData = new FormData($("#driverRegForm")[0]);
-    console.log(formData);
-    $.ajax({
-        url:"http://localhost:8080/Car_rent/Back_End_war/driver",
-        method: "post",
-        data: formData,
-        async:true,
-        contentType: false,
-        processData: false,
-        success: function (res) {
-            alert(res.message);
-        },
-        error: function (error) {
-            alert(error.responseJSON.message);
-        }
-    });
-});
+
 
 // -------------------------------------------------
 

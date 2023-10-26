@@ -24,4 +24,9 @@ public class DriverController {
         service.addDriver(driverDTO);
         return new ResponseUtil("Ok","Successfully Added",null);
     }
+
+    @GetMapping
+    public ResponseUtil getAllDrivers(){
+        return new ResponseUtil("OK","Successfully Loaded",service.getAllDrivers());
+    }
 }

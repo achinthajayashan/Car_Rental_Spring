@@ -69,6 +69,7 @@ $("#btnAddCustomer").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message);
+            loadAllCustomers();
         },
         error: function (error) {
             alert(error.responseJSON.message);

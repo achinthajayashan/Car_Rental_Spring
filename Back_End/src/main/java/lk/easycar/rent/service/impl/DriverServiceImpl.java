@@ -1,11 +1,14 @@
 package lk.easycar.rent.service.impl;
 
+import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.DriverDTO;
+import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.entity.Driver;
 import lk.easycar.rent.entity.User;
 import lk.easycar.rent.repo.DriverRepo;
 import lk.easycar.rent.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -53,5 +58,12 @@ public class DriverServiceImpl implements DriverService {
 
         driverRepo.save(map);
 
+    }
+
+    @Override
+    public ArrayList<DriverDTO> getAllDrivers() {
+        List<Driver> all = driverRepo.findAll();
+        return mapper.map(all, new TypeToken<List<DriverDTO>>() {
+        }.getType());
     }
 }
