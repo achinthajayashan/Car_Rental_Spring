@@ -7,6 +7,7 @@ import lk.easycar.rent.entity.User;
 import lk.easycar.rent.repo.CustomerRepo;
 import lk.easycar.rent.service.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +16,8 @@ import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -68,6 +71,13 @@ public class CustomerServiceImpl implements CustomerService {
 
         System.out.println(map);
         customerRepo.save(map);
+    }
+
+    @Override
+    public ArrayList<CustomerDTO> getAllCustomers() {
+        List<Customer> all = customerRepo.findAll();
+        return mapper.map(all, new TypeToken<List<CustomerDTO>>() {
+        }.getType());
     }
 }
 

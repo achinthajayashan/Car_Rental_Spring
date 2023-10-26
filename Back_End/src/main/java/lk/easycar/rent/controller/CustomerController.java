@@ -23,4 +23,9 @@ public class CustomerController {
         service.addCustomer(customerDTO);
         return new ResponseUtil("Ok","Successfully Added",null);
     }
+
+    @GetMapping
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil("OK","Successfully Loaded",service.getAllCustomers());
+    }
 }
