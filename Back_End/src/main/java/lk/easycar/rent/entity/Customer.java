@@ -14,7 +14,6 @@ import javax.persistence.*;
 @ToString
 public class Customer {
     @Id
-//    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String customerID;
     private String name;
     private String address;

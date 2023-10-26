@@ -24,8 +24,8 @@ public class CarServiceImpl implements CarService {
         Car map= mapper.map(dto,Car.class);
 
         try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath = System.getProperty("user.dir");
+            System.out.println("Project Location: " + projectPath);
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -42,7 +42,7 @@ public class CarServiceImpl implements CarService {
             map.setInteriorImage("uploads/" + dto.getInteriorImage().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

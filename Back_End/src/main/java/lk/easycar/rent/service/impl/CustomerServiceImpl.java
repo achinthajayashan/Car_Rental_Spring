@@ -38,10 +38,22 @@ public class CustomerServiceImpl implements CustomerService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath = System.getProperty("user.dir");
+            System.out.println("Project Location: " + projectPath);
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
+
+//            if (!uploadsDir.exists()) {
+//                if (uploadsDir.mkdirs()) {
+//                    System.out.println("Directory created successfully: " + projectPath);
+//                } else {
+//                    System.err.println("Failed to create directory: " + projectPath);
+//                }
+//            } else {
+//                System.out.println("Directory already exists: " + projectPath);
+//            }
+
 
             dto.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontImage().getOriginalFilename()));
             dto.getBackImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBackImage().getOriginalFilename()));
@@ -50,7 +62,7 @@ public class CustomerServiceImpl implements CustomerService {
             map.setBackImage("uploads/" + dto.getBackImage().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

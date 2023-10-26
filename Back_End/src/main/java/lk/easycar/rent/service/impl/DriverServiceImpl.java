@@ -33,7 +33,8 @@ public class DriverServiceImpl implements DriverService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath = System.getProperty("user.dir");
+            System.out.println("Project Location: " + projectPath);
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -45,7 +46,7 @@ public class DriverServiceImpl implements DriverService {
             map.setBackImage("uploads/" + driverDTO.getBackImage().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println(map);
