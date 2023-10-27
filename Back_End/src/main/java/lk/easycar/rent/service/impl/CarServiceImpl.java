@@ -66,4 +66,9 @@ public class CarServiceImpl implements CarService {
     public Car searchCar(String id) {
         return mapper.map(carRepo.findById(id).get(), Car.class);
     }
+
+    @Override
+    public void updateCar(CarDTO dto) {
+
+    }
 }

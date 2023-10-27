@@ -33,4 +33,11 @@ public class CarController {
     public Car searchCusId(String car_Id) {
         return carService.searchCar(car_Id);
     }
+
+    @PutMapping
+    public ResponseUtil updateCar(@ModelAttribute CarDTO carDTO){
+        System.out.println(carDTO);
+        carService.addCar(carDTO);
+        return new ResponseUtil("Ok","Successfully Updated",null);
+    }
 }

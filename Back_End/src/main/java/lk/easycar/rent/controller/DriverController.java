@@ -37,4 +37,13 @@ public class DriverController {
         return service.searchDriver(driverID);
     }
 
+    @PutMapping
+    public ResponseUtil updateDriver(@ModelAttribute DriverDTO driverDTO, @ModelAttribute UserDTO user){
+        System.out.println(driverDTO);
+        driverDTO.setUser(user);
+        System.out.println(driverDTO);
+        service.updateDriver(driverDTO);
+        return new ResponseUtil("Ok","Successfully Added",null);
+    }
+
 }

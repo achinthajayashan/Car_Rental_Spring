@@ -83,11 +83,23 @@ function bindTrEvents() {
                 $("#lblDriverUserName").text(res.user.userName);
                 $("#lblDriverPassword").text(res.user.password);
 
+                $('#btnEditDriverDetail').click(function () {
+                    $("#txtDriverId").val(res.driverID);
+                    $("#txtDriverLicenceNo").val(res.drivingLicenceNo);
+                    $("#txtDriverName").val(res.driverName);
+                    $("#txtDriverEmail").val(res.email);
+                    $("#txtDriverContact").val(res.contactNo);
+                    $("#driverFront_view").prop(res.frontImage);
+                    $("#driverBack_view").prop(res.backImage);
+                    $("#txtDriverUserName").val(res.user.userName);
+                    $("#txtDriverPassword").val(res.user.password);
+
+                    $('#driverDetailsPopupBg').hide();
+                })
+
             },
             error: function (error) {
-                loadAllCars();
-                let message = JSON.parse(error.responseText).message;
-                emptyMassage(message);
+                alert(error.responseJSON.message);
             }
         })
         // $("#txtCustomerID").val(id);
@@ -100,3 +112,23 @@ function bindTrEvents() {
 $('#btnCloseDriverDetail').click(function () {
     $('#driverDetailsPopupBg').hide();
 })
+
+$('#btnUpdateDriver').click(function () {
+    let formData = new FormData($("#driverRegForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url:"http://localhost:8080/Car_rent/Back_End_war/driver",
+        method: "put",
+        data: formData,
+        async:true,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message);
+            loadAllDrivers();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

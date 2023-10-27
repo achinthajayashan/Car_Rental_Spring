@@ -12,4 +12,6 @@ public interface CarService {
     ArrayList<CarDTO> getAllCars();
 
     Car searchCar(String id);
+
+    void updateCar(CarDTO dto);
 }
