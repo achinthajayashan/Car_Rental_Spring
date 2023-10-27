@@ -32,6 +32,8 @@ function loadAllCustomers() {
         url: "http://localhost:8080/Car_rent/Back_End_war/customer",
         method: "GET",
         dataType: "json",
+        // enctype:"multipart/form-data",
+        // contentType: false,
         success: function (res) {
             console.log(res);
 
@@ -50,10 +52,12 @@ function loadAllCustomers() {
 
                 let row = "<tr><td>" + customerID + "</td><td>" + name + "</td><td>" + address + "</td><td>" + contactNo + "</td><td>" + email + "</td></tr>";
                 $("#tblCustomers").append(row);
+
+                console.log(forntImage);
             }
             console.log(res.message);
         }, error: function (error) {
-            alert(error.responseJSON.message);
+            // alert(error.responseJSON.message);
         }
     });
 }

@@ -2,6 +2,7 @@ package lk.easycar.rent.service.impl;
 
 //import com.sun.org.apache.xpath.internal.operations.Mult;
 import lk.easycar.rent.dto.CustomerDTO;
+import lk.easycar.rent.dto.meta.CustomerMetaDTO;
 import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.entity.User;
 import lk.easycar.rent.repo.CustomerRepo;
@@ -15,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 

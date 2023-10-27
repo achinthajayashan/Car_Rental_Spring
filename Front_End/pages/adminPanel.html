@@ -38,6 +38,8 @@
         <section id="containSec">
 
 
+<!--            DASHBOARD SECTION-->
+
             <section id="dashboardSec" class="container-fluid contentSections bg-white z-0">
                 <div id="countsMainDiv" class="container-fluid d-flex mt-4">
                     <div class="countDiv me-4 d-flex">
@@ -71,6 +73,9 @@
                     </div>
                 </div>
             </section>
+
+<!--            CUSTOMER SECTION-->
+
             <section id="customersSec" class="container-fluid contentSections bg-white z-2">
                 <table class="table mt-3">
                     <thead class="table-header bg-primary text-white">
@@ -84,6 +89,11 @@
                     <tbody id="tblCustomers"></tbody>
                 </table>
             </section>
+
+
+
+<!--            CAR SECTION-->
+
             <section id="carsSec" class="container-fluid contentSections">
                 <div id="carDataInsertDiv" class="rounded-2 me-3 mt-3">
                     <h5 class="text-primary text-center mt-2">Car Registration Form</h5>
@@ -181,7 +191,13 @@
                     </table>
                 </div>
             </section>
-            <section id="driversSec" class="container-fluid contentSections">
+
+
+
+
+<!--            DRIVER SECTION-->
+
+            <section id="driversSec" class="container-fluid contentSections position-relative">
                 <div id="driverDataInsertDiv" class="rounded-2 me-3 mt-3">
                     <h5 class="text-primary text-center mt-4">Driver Registration Form</h5>
                     <form id="driverRegForm" role="form" action="/driver" enctype="multipart/form-data" method="post">
@@ -238,7 +254,64 @@
                         <tbody id="tblDrivers"></tbody>
                     </table>
                 </div>
+
+                <section class="popupSecAdminPanel container-fluid bg-transparent z-2 position-absolute" id="driverDetailsPopupBg">
+                    <div class="bg-white d-flex flex-column z-3 rounded popupDetailDiv z-3 shadow" id="driverDetailPopup">
+                        <h5 class="text-primary text-center mt-2">Driver Details</h5>
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Driver ID :</p>
+                            <p class="text-primary" id="lblDriverId"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Driver License :</p>
+                            <p class="text-primary" id="lblDriverLicense"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Name   :</p>
+                            <p class="text-primary" id="lblDriverName"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Email   :</p>
+                            <p class="text-primary" id="lblDriverEmail"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Contact No :</p>
+                            <p class="text-primary" id="lblDriverContact"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">License Front  :</p>
+                            <img class="text-primary w-50" id="lblDriverFrontImg" style="height: 100px">
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">License Rear  :</p>
+                            <img class="text-primary w-50" id="lblDriverRearImg" style="height: 100px">
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">User Name  :</p>
+                            <p class="text-primary" id="lblDriverUserName"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <p class="me-3">Password  :</p>
+                            <p class="text-primary" id="lblDriverPassword"></p>
+                        </div>
+
+                        <div class="container d-flex mt-3">
+                            <button class="btn btn-dark text-white me-3 w-50" id="btnEditDriverDetail">Edit Details</button>
+                            <button class="btn btn-danger text-white w-50" id="btnCloseDriverDetail">Close</button>
+                        </div>
+                    </div>
+                </section>
             </section>
+
+
             <section id="rentalsSec" class="container-fluid contentSections">
                 <table class="table mt-3">
                     <thead class="table-header bg-primary text-white">

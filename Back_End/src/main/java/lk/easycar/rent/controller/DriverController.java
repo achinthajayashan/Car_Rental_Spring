@@ -3,6 +3,8 @@ package lk.easycar.rent.controller;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.DriverDTO;
 import lk.easycar.rent.dto.UserDTO;
+import lk.easycar.rent.entity.Car;
+import lk.easycar.rent.entity.Driver;
 import lk.easycar.rent.service.CustomerService;
 import lk.easycar.rent.service.DriverService;
 import lk.easycar.rent.util.ResponseUtil;
@@ -29,4 +31,10 @@ public class DriverController {
     public ResponseUtil getAllDrivers(){
         return new ResponseUtil("OK","Successfully Loaded",service.getAllDrivers());
     }
+
+    @GetMapping(params = {"driverID"})
+    public Driver searchCusId(String driverID) {
+        return service.searchDriver(driverID);
+    }
+
 }

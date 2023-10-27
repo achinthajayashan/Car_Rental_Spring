@@ -33,10 +33,11 @@ function loadAllCars() {
                 let interiorImage = i.interiorImage;
 
 
-
+                console.log(frontImage);
 
                 let row = "<tr><td>" + carID + "</td><td>" + type + "</td><td>" + brand + "</td><td>" + availability + "</td></tr>";
                 $("#tblCars").append(row);
+
             }
             console.log(res.message);
         }, error: function (error) {

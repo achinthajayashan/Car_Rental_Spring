@@ -2,6 +2,7 @@ package lk.easycar.rent.service.impl;
 
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.DriverDTO;
+import lk.easycar.rent.entity.Car;
 import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.entity.Driver;
 import lk.easycar.rent.entity.User;
@@ -65,5 +66,10 @@ public class DriverServiceImpl implements DriverService {
         List<Driver> all = driverRepo.findAll();
         return mapper.map(all, new TypeToken<List<DriverDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public Driver searchDriver(String id) {
+        return mapper.map(driverRepo.findById(id).get(), Driver.class);
     }
 }
