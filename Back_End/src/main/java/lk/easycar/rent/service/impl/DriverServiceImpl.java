@@ -101,4 +101,9 @@ public class DriverServiceImpl implements DriverService {
 
         driverRepo.save(map);
     }
+
+    @Override
+    public void deleteDriver(String id) {
+        driverRepo.deleteById(id);
+    }
 }

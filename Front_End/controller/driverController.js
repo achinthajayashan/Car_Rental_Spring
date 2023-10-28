@@ -132,3 +132,18 @@ $('#btnUpdateDriver').click(function () {
         }
     });
 });
+
+$("#btnDeleteDriver").click(function () {
+    let id = $("#txtDriverId").val();
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/driver?driverID="+id ,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            loadAllDrivers();
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

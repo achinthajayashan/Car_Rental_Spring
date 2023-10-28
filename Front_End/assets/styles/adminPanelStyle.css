@@ -171,7 +171,7 @@ main{
     height: 100%;
     /*opacity: 60%;*/
     /*filter: blur(40px);*/
-    backdrop-filter: blur(10px);
+    backdrop-filter: brightness(50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +179,7 @@ main{
 }
 
 #driverDetailPopup{
-    width: 30%;
+    width: 40%;
     height: 85%;
 }
 

@@ -200,7 +200,7 @@
             <section id="driversSec" class="container-fluid contentSections position-relative">
                 <div id="driverDataInsertDiv" class="rounded-2 me-3 mt-3">
                     <h5 class="text-primary text-center mt-4">Driver Registration Form</h5>
-                    <form id="driverRegForm" role="form" action="/driver" enctype="multipart/form-data" method="post">
+                    <form id="driverRegForm" role="form" action="/driver" enctype="multipart/form-data" >
                         <div class="d-flex container mt-4">
                             <input type="text" name="driverID" id="txtDriverId" placeholder="Driver ID" class="input me-3 ms-3">
                             <input type="text" name="drivingLicenceNo" id="txtDriverLicenceNo" placeholder="Driving License No." class="input me-3 ms-3">
@@ -262,49 +262,49 @@
 
                 <section class="popupSecAdminPanel container-fluid bg-transparent z-2 position-absolute" id="driverDetailsPopupBg">
                     <div class="bg-white d-flex flex-column z-3 rounded popupDetailDiv z-3 shadow" id="driverDetailPopup">
-                        <h5 class="text-primary text-center mt-2">Driver Details</h5>
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Driver ID :</p>
+                        <h5 class="text-primary text-center mt-2 text-decoration-underline">Driver Details</h5>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-id-card-clip me-2"></i>Driver ID :</p>
                             <p class="text-primary" id="lblDriverId"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Driver License :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-regular fa-id-card me-2"></i>Driver License :</p>
                             <p class="text-primary" id="lblDriverLicense"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Name   :</p>
+                        <div class="container d-flex mt-3  ms-3">
+                            <p class="me-3"><i class="fa-solid fa-user-tie me-2"></i>Name   :</p>
                             <p class="text-primary" id="lblDriverName"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Email   :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-envelope me-2"></i>Email   :</p>
                             <p class="text-primary" id="lblDriverEmail"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Contact No :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-phone-volume me-2"></i>Contact No :</p>
                             <p class="text-primary" id="lblDriverContact"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">License Front  :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-image me-2"></i>License Front  :</p>
                             <img class="text-primary w-50" id="lblDriverFrontImg" style="height: 100px">
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">License Rear  :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-image me-2"></i>License Rear  :</p>
                             <img class="text-primary w-50" id="lblDriverRearImg" style="height: 100px">
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">User Name  :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-user me-2"></i>User Name  :</p>
                             <p class="text-primary" id="lblDriverUserName"></p>
                         </div>
 
-                        <div class="container d-flex mt-3">
-                            <p class="me-3">Password  :</p>
+                        <div class="container d-flex mt-3 ms-3">
+                            <p class="me-3"><i class="fa-solid fa-lock me-2"></i>Password  :</p>
                             <p class="text-primary" id="lblDriverPassword"></p>
                         </div>
 
