@@ -38,7 +38,13 @@ public class CarController {
     @PutMapping
     public ResponseUtil updateCar(@ModelAttribute CarDTO carDTO){
         System.out.println(carDTO);
-        carService.addCar(carDTO);
+        carService.updateCar(carDTO);
         return new ResponseUtil("Ok","Successfully Updated",null);
+    }
+
+    @DeleteMapping(params = {"carId"})
+    public ResponseUtil deleteCar(@RequestParam String carId) {
+        carService.deleteCar(carId);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + carId, null);
     }
 }

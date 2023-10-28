@@ -46,10 +46,10 @@ public class DriverController {
         return new ResponseUtil("Ok","Successfully Added",null);
     }
 
-    @DeleteMapping(params = {"driverID"})
-    public ResponseUtil deleteDriver(@RequestParam String id) {
-        service.deleteDriver(id);
-        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
+    @DeleteMapping(params = {"driverId"})
+    public ResponseUtil deleteDriver(@RequestParam String driverId) {
+        service.deleteDriver(driverId);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + driverId, null);
     }
 
 }

@@ -89,37 +89,51 @@ function bindTrEvents() {
                 $("#lblregNo").text(res.regNo);
                 $("#lblbrand").text(res.brand);
                 $("#lbltype").text(res.type);
-                $("#lblPassenger").text(res.passenger);
-                $("#frontImage").prop(res.frontImage);
-                $("#RearImage").prop(res.RearImage);
-                $("#sideImage").prop(res.sideImage);
-                $("#interiorImage").prop(res.interiorImage);
-                // $("#lblPassenger").text(res.passenger);
                 $("#lblcolor").text(res.color);
                 $("#lbltransmissionType").text(res.transmissionType);
                 $("#lblfuelType").text(res.fuelType);
                 $("#lblextraMileagePrice").text(res.extraMileagePrice);
                 $("#lblCurrentMileage").text(res.currentMileage);
                 $("#lblWaiverPayment").text(res.wavierPayment);
+                $("#lblPassenger").text(res.passenger);
                 $("#lblAvailability").text(res.availability);
                 $("#lblfreeMileageDaily").text(res.freeMileageDaily);
                 $("#lblfreeMileageDailyPrice").text(res.freeMileageDailyPrice);
                 $("#lblfreeMileageMonthly").text(res.freeMileageMonthly);
                 $("#lblfreeMileageMonthlyPrice").text(res.freeMileageMonthlyPrice);
 
-                // $('#btnEditCarDetail').click(function () {
-                //     $("#txt").val(res.driverID);
-                //     $("#txtDriverLicenceNo").val(res.drivingLicenceNo);
-                //     $("#txtDriverName").val(res.driverName);
-                //     $("#txtDriverEmail").val(res.email);
-                //     $("#txtDriverContact").val(res.contactNo);
-                //     $("#driverFront_view").prop(res.frontImage);
-                //     $("#driverBack_view").prop(res.backImage);
-                //     $("#txtDriverUserName").val(res.user.userName);
-                //     $("#txtDriverPassword").val(res.user.password);
-                //
-                //     $('#driverDetailsPopupBg').hide();
-                // })
+                // $("#frontImage").prop(res.frontImage);
+                // $("#RearImage").prop(res.RearImage);
+                // $("#sideImage").prop(res.sideImage);
+                // $("#interiorImage").prop(res.interiorImage);
+
+
+                $('#btnEditCarDetail').click(function () {
+                    $("#txtCarId").val(res.carID);
+                    $("#txtCarRegNum").val(res.regNo);
+                    $("#txtCarBrand").val(res.brand);
+                    $("#txtCarType").val(res.type);
+                    $("#txtCarNumPassengers").val(res.passenger);
+                    $("#txtCarColour").val(res.color);
+                    $("#txtCarTransmission").val(res.transmissionType);
+                    $("#txtCarFuel").val(res.fuelType);
+                    $("#txtExtraKMPrice").val(res.extraMileagePrice);
+                    $("#txtcurrentMileage").val(res.currentMileage);
+                    $("#txtWaiverPayment").val(res.wavierPayment);
+                    $("#txtAvailability").val(res.availability);
+                    $("#txtDailyRate").val(res.freeMileageDaily);
+                    $("#txtCarDayPrice").val(res.freeMileageDailyPrice);
+                    $("#txtFreeMileage").val(res.freeMileageMonthly);
+                    $("#txtCarMonthlyPrice").val(res.freeMileageMonthlyPrice);
+
+                    // $("#imgFront").prop(res.frontImage);
+                    // $("#imgRear").prop(res.backImage);
+                    // $("#imgside").prop(res.frontImage);
+                    // $("#imgInterior").prop(res.backImage);
+
+
+                    $('#carDetailsPopupBg').hide();
+                })
 
             },
             error: function (error) {
@@ -133,6 +147,43 @@ function bindTrEvents() {
     })
 }
 
-$('#btnCloseDriverDetail').click(function () {
-    $('#driverDetailsPopupBg').hide();
-})
+$('#btnCloseCarDetail').click(function () {
+    $('#carDetailsPopupBg').hide();
+});
+
+
+$("#btnDeleteCar").click(function () {
+    let carId = $("#txtCarId").val();
+    console.log(carId);
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/car?carId="+carId,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            loadAllDrivers();
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
+
+
+$('#btnUpdateCar').click(function () {
+    let formData = new FormData($("#carRegForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url:"http://localhost:8080/Car_rent/Back_End_war/car",
+        method: "put",
+        data: formData,
+        async:true,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message);
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

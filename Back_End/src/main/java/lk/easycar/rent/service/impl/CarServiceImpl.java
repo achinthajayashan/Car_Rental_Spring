@@ -69,6 +69,37 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void updateCar(CarDTO dto) {
+        Car map= mapper.map(dto,Car.class);
 
+        try {
+            String projectPath = System.getProperty("user.dir");
+            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontImage().getOriginalFilename()));
+            dto.getRearImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getRearImage().getOriginalFilename()));
+            dto.getSideImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSideImage().getOriginalFilename()));
+            dto.getInteriorImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInteriorImage().getOriginalFilename()));
+
+
+            map.setFrontImage("uploads/" + dto.getFrontImage().getOriginalFilename());
+            map.setRearImage("uploads/" + dto.getRearImage().getOriginalFilename());
+            map.setSideImage("uploads/" + dto.getSideImage().getOriginalFilename());
+            map.setInteriorImage("uploads/" + dto.getInteriorImage().getOriginalFilename());
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println(map);
+        carRepo.save(map);
+    }
+
+    @Override
+    public void deleteCar(String carId) {
+        carRepo.deleteById(carId);
     }
 }

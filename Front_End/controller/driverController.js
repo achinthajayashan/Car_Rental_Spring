@@ -1,6 +1,8 @@
-$('#driverDetailsPopupBg').hide();
+
 loadAllDrivers();
 
+$('#driverDetailsPopupBg').show();
+driverbindTrEvents();
 
 // Save Driver
 $('#btnSaveDriver').click(function () {
@@ -49,7 +51,7 @@ function loadAllDrivers() {
                 let row = "<tr><td>" + driverID + "</td><td>" + driverName + "</td><td>" + drivingLicenceNo + "</td><td>" + contactNo + "</td></tr>";
                 $("#tblDrivers").append(row);
             }
-            bindTrEvents();
+            driverbindTrEvents();
             console.log(res.message);
         }, error: function (error) {
             alert(error.responseJSON.message);
@@ -57,17 +59,16 @@ function loadAllDrivers() {
     });
 }
 
-function bindTrEvents() {
+function driverbindTrEvents() {
     $('#tblDrivers>tr').click(function () {
-        let id = $(this).children().eq(0).text();
+        let driverId = $(this).children().eq(0).text();
         console.log("row clicked")
-        console.log(id);
+        console.log(driverId);
 
         $('#driverDetailsPopupBg').show();
 
-
         $.ajax({
-            url: "http://localhost:8080/Car_rent/Back_End_war/driver?driverID="+id,
+            url: "http://localhost:8080/Car_rent/Back_End_war/driver?driverID="+driverId,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -134,16 +135,17 @@ $('#btnUpdateDriver').click(function () {
 });
 
 $("#btnDeleteDriver").click(function () {
-    let id = $("#txtDriverId").val();
+    let driverId = $("#txtDriverId").val();
+    console.log(driverId);
     $.ajax({
-        url: "http://localhost:8080/Car_rent/Back_End_war/driver?driverID="+id ,
+        url: "http://localhost:8080/Car_rent/Back_End_war/driver?driverId="+driverId,
         method: "delete",
         dataType: "json",
         success: function (res) {
             alert(res.message)
             loadAllDrivers();
         }, error: function (error) {
-            alert(error.responseJSON.message);
+            // alert(error.responseJSON.message);
         }
     });
 });
