@@ -33,7 +33,7 @@ public class DriverController {
     }
 
     @GetMapping(params = {"driverID"})
-    public Driver searchCusId(String driverID) {
+    public Driver searchDriverId(String driverID) {
         return service.searchDriver(driverID);
     }
 

@@ -29,9 +29,10 @@ public class CarController {
         return new ResponseUtil("OK","Successfully Loaded",carService.getAllCars());
     }
 
-    @GetMapping(params = {"carID"})
-    public Car searchCusId(String car_Id) {
-        return carService.searchCar(car_Id);
+    @GetMapping(params = {"car_id"})
+    public Car searchCar(String car_id) {
+        System.out.println(car_id);
+        return carService.searchCar(car_id);
     }
 
     @PutMapping

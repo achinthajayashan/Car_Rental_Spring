@@ -190,6 +190,124 @@
                         <tbody id="tblCars"></tbody>
                     </table>
                 </div>
+
+                <section class="popupSecAdminPanel container-fluid bg-transparent z-2 position-absolute" id="carDetailsPopupBg">
+                    <div class="bg-white d-flex flex-column z-3 rounded popupDetailDiv z-3 shadow" id="carDetailPopup">
+                        <h5 class="text-primary text-center mt-2 text-decoration-underline">Car Details</h5>
+                        <div class="w-100 d-flex">
+                            <div class="w-50">
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-car me-2"></i>Car ID :</p>
+                                    <p class="text-primary" id="lblCarId"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-hashtag me-2"></i>Registered No :</p>
+                                    <p class="text-primary" id="lblregNo"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3  ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-industry me-2"></i>Brand   :</p>
+                                    <p class="text-primary" id="lblbrand"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-arrow-pointer me-2"></i>Type   :</p>
+                                    <p class="text-primary" id="lbltype"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-arrow-down-1-9 me-2"></i>No of Passengers :</p>
+                                    <p class="text-primary" id="lblPassenger"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-image me-2"></i>Front Image  :</p>
+                                    <img class="text-primary w-50" id="frontImage" style="height: 100px">
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-image me-2"></i>Rear Image  :</p>
+                                    <img class="text-primary w-50" id="RearImage" style="height: 100px">
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-gas-pump me-2"></i>Fuel Type  :</p>
+                                    <p class="text-primary" id="lblfuelType"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-dollar-sign me-2"></i>Extra Mileage Price  :</p>
+                                    <p class="text-primary" id="lblextraMileagePrice"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-car-side me-2"></i>color  :</p>
+                                    <p class="text-primary" id="lblcolor"></p>
+                                </div>
+                            </div>
+                            <div class="w-50">
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-meteor me-2"></i>Curent Mileage :</p>
+                                    <p class="text-primary" id="lblCurrentMileage"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-regular fa-money-check-dollar me-2"></i>Waiver Payment :</p>
+                                    <p class="text-primary" id="lblWaiverPayment"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3  ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-toggle-on me-2"></i>Availability   :</p>
+                                    <p class="text-primary" id="lblAvailability"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-hashtag me-2"></i>Free Daily Mileages   :</p>
+                                    <p class="text-primary" id="lblfreeMileageDaily"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-dollar-sign me-2"></i>Daily Price :</p>
+                                    <p class="text-primary" id="lblfreeMileageDailyPrice"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-image me-2"></i>Side Image  :</p>
+                                    <img class="text-primary w-50" id="sideImage" style="height: 100px">
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-image me-2"></i>Interior Image  :</p>
+                                    <img class="text-primary w-50" id="interiorImage" style="height: 100px">
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-hashtag me-2"></i>Free Monthly Mileage  :</p>
+                                    <p class="text-primary" id="lbllblfreeMileageMonthly"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-dollar-sign me-2"></i>Monthly Price  :</p>
+                                    <p class="text-primary" id="lblfreeMileageMonthlyPrice"></p>
+                                </div>
+
+                                <div class="container d-flex mt-3 ms-3">
+                                    <p class="me-3"><i class="fa-solid fa-gear me-2"></i>Transmission  :</p>
+                                    <p class="text-primary" id="lbltransmissionType"></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="container d-flex mt-3 align-items-center justify-content-center">
+                            <button class="btn btn-dark text-white me-3 w-25 " id="btnEditCarDetail">Edit Details</button>
+                            <button class="btn btn-danger text-white w-25" id="btnCloseCarDetail">Close</button>
+                        </div>
+                    </div>
+                </section>
             </section>
 
 
