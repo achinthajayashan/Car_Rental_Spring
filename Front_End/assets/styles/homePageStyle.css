@@ -203,3 +203,15 @@
 #closeLogin{
     cursor: pointer;
 }
+
+#aboutSec{
+    width: 100vw;
+    height: 60vh;
+
+}
+
+#aboutImgDiv{
+    background-image: url("../img/stylish-elegant-woman-car-salon.jpg");
+    background-size: cover;
+    background-position: center;
+}
