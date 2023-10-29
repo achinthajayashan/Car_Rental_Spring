@@ -1,62 +1,5 @@
-$('#loginBG').hide();
-
+$('#rentCarDeBG').hide();
 loadCarDetails();
-
-$('#btnViewSignIn').click(function () {
-    $('#loginBG').show();
-});
-
-$('#closeLogin').click(function () {
-    $('#loginBG').hide();
-});
-
-$('#btnSign').click(function () {
-    window.open("../pages/adminPanel.html","_self");
-});
-
-// let currentSlide = 0;
-// const slideshowContainers =document.querySelectorAll('.slideshow-container');
-//
-//
-// slideshowContainers.forEach(slideshow => {
-//     const slides = slideshow.querySelectorAll('.slide');
-//
-//     function showSlide(index) {
-//         if (index < 0) {
-//             index = slides.length - 1;
-//         } else if (index >= slides.length) {
-//             index = 0;
-//         }
-//
-//         slides[currentSlide].style.display = 'none';
-//         slides[index].style.display = 'block';
-//
-//         currentSlide = index;
-//     }
-//
-//     showSlide(currentSlide);
-//
-//     $('.btnNexxtSlide').click(function () {
-//         showSlide(currentSlide -1);
-//     })
-//
-//     // function changeSlide(offset) {
-//     //
-//     // }
-//
-//
-//     // Now the 'childElements' variable contains all the child elements within the current slideshow container.
-//
-//     // You can work with 'childElements' here for each slideshow container.
-// });
-//
-// const  slides2 = slides.length;
-//
-//
-//
-
-
-// Initial display of the first slide
 
 
 
@@ -68,6 +11,7 @@ function loadCarDetails() {
         method: "GET",
         dataType: "json",
         success: function (res) {
+
             console.log(res)
 
             for (let i of res) {
@@ -144,17 +88,19 @@ function loadCarDetails() {
             alert(error.responseJSON.message);
         }
     });
-    
+
 }
-
-
 
 function btnBookNowView() {
     console.log("clicked")
-    alert("Please Log In to System for Rent a Car")
+
 }
 
 function btnAddToListView() {
     console.log("clicked")
     alert("Please Log In to System for Add To List")
 }
+
+$('#btnCloseRentDetail').click(function () {
+    $('#rentCarDeBG').hide();
+})
