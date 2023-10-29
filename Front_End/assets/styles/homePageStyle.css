@@ -215,3 +215,30 @@
     background-size: cover;
     background-position: center;
 }
+
+.carViewDiv{
+    height: 600px;
+}
+
+
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: start;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
