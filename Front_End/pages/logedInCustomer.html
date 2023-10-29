@@ -114,77 +114,205 @@
   </section>
 
   <section class="container">
-    <div class="row gap-5 justify-content-center">
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" >
-          <div class="slideshow-container mt-3">
-            <div class="slide">
-              <img src="../assets/img/Alto800_Black.png" alt="Image 1">
-            </div>
-            <div class="slide">
-              <img src="../assets/img/Hyundai-Grand-i10-Nios-200120231541.jpg" alt="Image 2">
-            </div>
-            <div class="slide">
-              <img src="../assets/img/hyundai-intro.jpg" alt="Image 3">
-            </div>
-            <div class="slide">
-              <img src="../assets/img/images%20(4).jpeg" alt="Image 4">
-            </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-0"><button class="prev btn" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="next btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button></div>
+    <div class="row gap-5 justify-content-center " id="carViewSection">
+<!--      <div class="col-md-3 carViewDiv bg-white shadow rounded-2" >-->
+<!--          <div class="slideshow-container mt-3">-->
+<!--            <div class="slide">-->
+<!--              <img src="../assets/img/Alto800_Black.png" alt="Image 1" id="loadFrontImage">-->
+<!--            </div>-->
+<!--            <div class="slide">-->
+<!--              <img src="../assets/img/Hyundai-Grand-i10-Nios-200120231541.jpg" alt="Image 2" id="loadRearImage">-->
+<!--            </div>-->
+<!--            <div class="slide">-->
+<!--              <img src="../assets/img/hyundai-intro.jpg" alt="Image 3" id="loadSideImage">-->
+<!--            </div>-->
+<!--            <div class="slide">-->
+<!--              <img src="../assets/img/images%20(4).jpeg" alt="Image 4" id="loadInteriorImage">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="d-flex align-items-center justify-content-center mt-0 btnNexxtSlide"><button class="prev btn"  ><i class="fa-solid fa-chevron-left"></i></button>-->
+<!--          <button class="next btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button></div>-->
 
-        <div class="text-center bg-primary text-white rounded">
-          <h5>Suzuki Alto</h5>
-        </div>
+<!--        <div class="text-center bg-primary text-white rounded">-->
+<!--          <h5 id="loadCarBrand">Suzuki Alto</h5>-->
+<!--        </div>-->
 
-        <div class="d-flex w-100 mb-0">
+<!--        <div class="d-flex w-100 mb-0">-->
 
-          <div class="w-50" >
-            <ul>
-              <li>4 Passengers</li>
-              <li>Auto Gear</li>
-            </ul>
-          </div>
+<!--          <div class="w-50" >-->
+<!--            <ul>-->
+<!--              <li id="loadCarPassengers">4 Passengers</li>-->
+<!--              <li id="loadTransmissionType">Auto Gear</li>-->
+<!--            </ul>-->
+<!--          </div>-->
 
-          <div class="w-50 mb-0">
-            <ul class="mb-0">
-              <li>Black Color</li>
-              <li>Petrol</li>
-            </ul>
-          </div>
+<!--          <div class="w-50 mb-0">-->
+<!--            <ul class="mb-0">-->
+<!--              <li id="loadCarColor">Black Color</li>-->
+<!--              <li id="loadFuelType">Petrol</li>-->
+<!--            </ul>-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
 
-        <p class="text-center text-secondary mt-0 mb-0">Rs.25 for Extra Km</p>
+<!--        <p class="text-center text-secondary mt-0 mb-0" id="loadExtraMileagePrice">Rs.25 for Extra Km</p>-->
 
 
-        <p class="text-center bg-secondary-subtle text-muted mt-0">Wavier Payment is Rs.10000</p>
+<!--        <p class="text-center bg-secondary-subtle text-muted mt-0" id="loadwaiverAmount">Wavier Payment is Rs.10000</p>-->
 
-        <div class="d-flex w-100">
-          <div class="w-50 text-center bg-secondary rounded text-white me-2">
-            <p class="m-0">Daily</p>
-            <h5 class="m-0 bg-dark">Rs.2500</h5>
-            <p class="m-0">for 200km</p>
-          </div>
-          <div class="w-50 text-center bg-secondary rounded text-white">
-            <p class="m-0">Monthly</p>
-            <h5 class="m-0 bg-dark">Rs.60000</h5>
-            <p class="m-0">for 5000km</p>
-          </div>
+<!--        <div class="d-flex w-100">-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white me-2">-->
+<!--            <p class="m-0">Daily</p>-->
+<!--            <h5 class="m-0 bg-dark" id="loadDailyMilleagePrice">Rs.2500</h5>-->
+<!--            <p class="m-0" id="loadDailyMilleage">for 200km</p>-->
+<!--          </div>-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white">-->
+<!--            <p class="m-0">Monthly</p>-->
+<!--            <h5 class="m-0 bg-dark" id="loadMonthlyMilleagePrrice">Rs.60000</h5>-->
+<!--            <p class="m-0" id="loadMonthlyMilleage">for 5000km</p>-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
 
-        <div class="d-flex w-100 mt-5">
-          <button class="btn w-50 bg-primary me-2 text-white"><i class="fa-solid fa-receipt me-2"></i>Book Now</button>
-          <button class="btn w-50 bg-dark text-white"><i class="fa-solid fa-list me-2"></i>Add To List</button>
-        </div>
+<!--        <div class="d-flex w-100 mt-5">-->
+<!--          <button class="btn w-50 bg-primary me-2 text-white"><i class="fa-solid fa-receipt me-2"></i>Book Now</button>-->
+<!--          <button class="btn w-50 bg-dark text-white"><i class="fa-solid fa-list me-2"></i>Add To List</button>-->
+<!--        </div>-->
 
-      </div>
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>
-      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>
+<!--      </div>-->
+<!--      <div class="col-md-3 carViewDiv bg-white shadow rounded-2" >-->
+<!--        <div class="slideshow-container mt-3">-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/Alto800_Black.png" alt="Image 1">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/Hyundai-Grand-i10-Nios-200120231541.jpg" alt="Image 2">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/hyundai-intro.jpg" alt="Image 3">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/images%20(4).jpeg" alt="Image 4">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="d-flex align-items-center justify-content-center mt-0"><button class="prev btn" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>-->
+<!--          <button class="next btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button></div>-->
+
+<!--        <div class="text-center bg-primary text-white rounded">-->
+<!--          <h5>Suzuki Alto</h5>-->
+<!--        </div>-->
+
+<!--        <div class="d-flex w-100 mb-0">-->
+
+<!--          <div class="w-50" >-->
+<!--            <ul>-->
+<!--              <li>4 Passengers</li>-->
+<!--              <li>Auto Gear</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--          <div class="w-50 mb-0">-->
+<!--            <ul class="mb-0">-->
+<!--              <li>Black Color</li>-->
+<!--              <li>Petrol</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--        <p class="text-center text-secondary mt-0 mb-0">Rs.25 for Extra Km</p>-->
+
+
+<!--        <p class="text-center bg-secondary-subtle text-muted mt-0">Wavier Payment is Rs.10000</p>-->
+
+<!--        <div class="d-flex w-100">-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white me-2">-->
+<!--            <p class="m-0">Daily</p>-->
+<!--            <h5 class="m-0 bg-dark">Rs.2500</h5>-->
+<!--            <p class="m-0">for 200km</p>-->
+<!--          </div>-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white">-->
+<!--            <p class="m-0">Monthly</p>-->
+<!--            <h5 class="m-0 bg-dark">Rs.60000</h5>-->
+<!--            <p class="m-0">for 5000km</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="d-flex w-100 mt-5">-->
+<!--          <button class="btn w-50 bg-primary me-2 text-white"><i class="fa-solid fa-receipt me-2"></i>Book Now</button>-->
+<!--          <button class="btn w-50 bg-dark text-white"><i class="fa-solid fa-list me-2"></i>Add To List</button>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <div class="col-md-3 carViewDiv bg-white shadow rounded-2" >-->
+<!--        <div class="slideshow-container mt-3">-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/Alto800_Black.png" alt="Image 1">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/Hyundai-Grand-i10-Nios-200120231541.jpg" alt="Image 2">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/hyundai-intro.jpg" alt="Image 3">-->
+<!--          </div>-->
+<!--          <div class="slide">-->
+<!--            <img src="../assets/img/images%20(4).jpeg" alt="Image 4">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="d-flex align-items-center justify-content-center mt-0"><button class="prev btn" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>-->
+<!--          <button class="next btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button></div>-->
+
+<!--        <div class="text-center bg-primary text-white rounded">-->
+<!--          <h5>Suzuki Alto</h5>-->
+<!--        </div>-->
+
+<!--        <div class="d-flex w-100 mb-0">-->
+
+<!--          <div class="w-50" >-->
+<!--            <ul>-->
+<!--              <li>4 Passengers</li>-->
+<!--              <li>Auto Gear</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--          <div class="w-50 mb-0">-->
+<!--            <ul class="mb-0">-->
+<!--              <li>Black Color</li>-->
+<!--              <li>Petrol</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--        <p class="text-center text-secondary mt-0 mb-0">Rs.25 for Extra Km</p>-->
+
+
+<!--        <p class="text-center bg-secondary-subtle text-muted mt-0">Wavier Payment is Rs.10000</p>-->
+
+<!--        <div class="d-flex w-100">-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white me-2">-->
+<!--            <p class="m-0">Daily</p>-->
+<!--            <h5 class="m-0 bg-dark">Rs.2500</h5>-->
+<!--            <p class="m-0">for 200km</p>-->
+<!--          </div>-->
+<!--          <div class="w-50 text-center bg-secondary rounded text-white">-->
+<!--            <p class="m-0">Monthly</p>-->
+<!--            <h5 class="m-0 bg-dark">Rs.60000</h5>-->
+<!--            <p class="m-0">for 5000km</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="d-flex w-100 mt-5">-->
+<!--          <button class="btn w-50 bg-primary me-2 text-white"><i class="fa-solid fa-receipt me-2"></i>Book Now</button>-->
+<!--          <button class="btn w-50 bg-dark text-white"><i class="fa-solid fa-list me-2"></i>Add To List</button>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>-->
+<!--      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>-->
+<!--      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>-->
 <!--      <div class="col-md-3 carViewDiv bg-white border border-dark rounded-2 border-2" ></div>-->
     </div>
 

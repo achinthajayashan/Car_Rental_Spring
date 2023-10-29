@@ -9,6 +9,8 @@ import lk.easycar.rent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/car")
@@ -27,6 +29,11 @@ public class CarController {
     @GetMapping
     public ResponseUtil getAllCars(){
         return new ResponseUtil("OK","Successfully Loaded",carService.getAllCars());
+    }
+
+    @GetMapping(path = "/view")
+    public ArrayList<CarDTO> getAllCarsList(){
+        return carService.getAllCars();
     }
 
     @GetMapping(params = {"car_id"})
