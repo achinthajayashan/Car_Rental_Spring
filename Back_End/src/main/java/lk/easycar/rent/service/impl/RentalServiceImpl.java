@@ -1,16 +1,21 @@
 package lk.easycar.rent.service.impl;
 
+import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.RentalDTO;
+import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.entity.Rental;
 import lk.easycar.rent.repo.RentalRepo;
 import lk.easycar.rent.service.RentalService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -65,5 +70,12 @@ public class RentalServiceImpl implements RentalService {
         rentalRepo.save(rent);
         System.out.println(rent);
 //        rentalRepo.save(new Rental(rentalDTO.getRentID(),rentalDTO.getCusID(),rentalDTO.getPickupDate(),rentalDTO.getPickupTime(),rentalDTO.getDuration(),rentalDTO.getStatus(),rentalDTO.getDeclineReason(),rentalDTO.getRentDetails().getRentID(),rentalDTO.getRentDetails().getCarID(),rentalDTO.getRentDetails().getDriverID(),rentalDTO.getRentDetails().getPayment().getPaymentID(),rentalDTO.getRentDetails().getPayment().getWaiverDeductions(),rentalDTO.getRentDetails().getPayment().getWaiverSlip(),rentalDTO.getRentDetails().getPayment().getExtraMileagePayment()));
+    }
+
+    @Override
+    public ArrayList<RentalDTO> getAllRentals() {
+        List<Rental> all = rentalRepo.findAll();
+        return mapper.map(all, new TypeToken<List<RentalDTO>>() {
+        }.getType());
     }
 }

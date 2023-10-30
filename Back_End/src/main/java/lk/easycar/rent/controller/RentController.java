@@ -36,4 +36,11 @@ public class RentController {
 
         return new ResponseUtil("Ok","Successfully Added",rentalDTO);
     }
+
+
+    @GetMapping
+    public ResponseUtil getAllRentals(){
+        return new ResponseUtil("OK","Successfully Loaded",rentalService.getAllRentals());
+    }
+
 }
