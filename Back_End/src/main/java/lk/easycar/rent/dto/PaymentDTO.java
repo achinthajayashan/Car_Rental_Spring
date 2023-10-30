@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,6 +13,6 @@ import lombok.ToString;
 public class PaymentDTO {
     private String paymentID;
     private double waiverDeductions;
-    private String waiverSlip;
+    private MultipartFile waiverSlip;
     private double extraMileagePayment;
 }

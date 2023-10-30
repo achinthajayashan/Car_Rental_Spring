@@ -28,8 +28,8 @@ public class RentController {
 
         rentCarDetailDTO.setPayment(paymentDTO);
 
-
         System.out.println(rentalDTO);
+        System.out.println(paymentDTO);
 
         rentalService.requestRent(rentalDTO);
 
