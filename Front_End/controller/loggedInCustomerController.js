@@ -93,7 +93,7 @@ function loadCarDetails() {
 
 function btnBookNowView() {
     console.log("clicked")
-
+    $('#rentCarDeBG').show();
 }
 
 function btnAddToListView() {
@@ -103,4 +103,8 @@ function btnAddToListView() {
 
 $('#btnCloseRentDetail').click(function () {
     $('#rentCarDeBG').hide();
-})
+});
+
+$('#rentCarDeBG').click(function () {
+    this.hide();
+});

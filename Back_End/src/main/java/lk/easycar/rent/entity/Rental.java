@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -20,8 +21,12 @@ public class Rental {
     private Customer cusID;
     private String pickupDate;
     private String pickupTime;
+    private String  duration;
     private String status;
     private String declineReason;
+
+    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
+    private List<RentCarDetail> rentDetails;
 
 
 }
