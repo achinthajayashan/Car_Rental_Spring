@@ -20,5 +20,7 @@ public class RentCarDetailDTO {
     private String driverID;
     private String  paymentID;
 
+    private PaymentDTO paymentDTO;
+
 
 }

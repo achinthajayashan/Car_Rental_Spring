@@ -1,5 +1,6 @@
 package lk.easycar.rent.entity;
 
+import lk.easycar.rent.dto.RentCarDetailDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,7 @@ public class Rental {
     private String status;
     private String declineReason;
 
-    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<RentCarDetail> rentDetails;
 
 

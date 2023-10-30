@@ -108,3 +108,26 @@ $('#btnCloseRentDetail').click(function () {
 $('#rentCarDeBG').click(function () {
     this.hide();
 });
+
+
+
+
+$("#btnRequestRentr").click(function () {
+    let formData = new FormData($("#rentReqForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url:"http://localhost:8080/Car_rent/Back_End_war/rent",
+        method: "post",
+        data: formData,
+        async:true,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message);
+            loadAllCustomers();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
