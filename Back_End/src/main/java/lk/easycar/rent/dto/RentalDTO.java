@@ -16,7 +16,7 @@ import java.util.List;
 public class RentalDTO {
 
     private String rentID;
-    private String cusID;
+    private String customerID;
     private String pickupDate;
     private String pickupTime;
     private String  duration;

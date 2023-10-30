@@ -22,7 +22,7 @@ public class RentController {
 
     @PostMapping
     public ResponseUtil requestRent(@ModelAttribute RentalDTO  rentalDTO, @ModelAttribute RentCarDetailDTO rentCarDetailDTO, @ModelAttribute PaymentDTO paymentDTO){
-        rentalDTO.setCusID("C00-001");
+        rentalDTO.setCustomerID("C00-001");
 
         rentalDTO.setRentDetails(Collections.singletonList(rentCarDetailDTO));
 

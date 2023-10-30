@@ -19,8 +19,8 @@ public class Rental {
     @Id
     private String rentID;
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "cusID",referencedColumnName = "customerID")
-    private Customer cusID;
+    @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
+    private Customer customerID;
     private String pickupDate;
     private String pickupTime;
     private String  duration;
