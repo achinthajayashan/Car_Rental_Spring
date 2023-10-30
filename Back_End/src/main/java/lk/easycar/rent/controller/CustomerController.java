@@ -32,6 +32,6 @@ public class CustomerController {
 
     @GetMapping(path = "/IdGenerate")
     public @ResponseBody CustomDTO customerIdGenerate() {
-        return service.userIdGenerate();
+        return service.customerIdGenerate();
     }
 }

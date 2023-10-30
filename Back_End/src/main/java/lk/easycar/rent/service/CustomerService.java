@@ -11,5 +11,5 @@ public interface CustomerService {
 
     ArrayList<CustomerDTO> getAllCustomers();
 
-    CustomDTO userIdGenerate();
+    CustomDTO customerIdGenerate();
 }
