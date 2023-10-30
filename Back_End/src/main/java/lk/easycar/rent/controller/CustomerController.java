@@ -1,5 +1,6 @@
 package lk.easycar.rent.controller;
 
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.service.CustomerService;
 import lk.easycar.rent.dto.UserDTO;
@@ -27,5 +28,10 @@ public class CustomerController {
     @GetMapping
     public ResponseUtil getAllCustomers(){
         return new ResponseUtil("OK","Successfully Loaded",service.getAllCustomers());
+    }
+
+    @GetMapping(path = "/IdGenerate")
+    public @ResponseBody CustomDTO customerIdGenerate() {
+        return service.userIdGenerate();
     }
 }

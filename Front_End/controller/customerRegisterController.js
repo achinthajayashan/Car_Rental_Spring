@@ -1,5 +1,6 @@
 let BASE_URL="http://localhost:8080/Car_rent/Back_End_war/"
 
+generateCustomerID();
 loadAllCustomers();
 $('#backToSignIn').click(function () {
     window.history.back();
@@ -58,6 +59,31 @@ function loadAllCustomers() {
             console.log(res.message);
         }, error: function (error) {
             // alert(error.responseJSON.message);
+        }
+    });
+}
+
+function generateCustomerID() {
+    $("#txtCusID").val("C00-001");
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/customer/IdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#txtCusID").val("C00-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#txtCusID").val("C00-0" + tempId);
+            } else {
+                $("#txtCusID").val("C00-" + tempId);
+            }
+        },
+        error: function (ob, statusText, error) {
         }
     });
 }

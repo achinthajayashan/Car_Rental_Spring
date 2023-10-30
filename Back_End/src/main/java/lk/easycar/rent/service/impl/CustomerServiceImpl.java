@@ -1,6 +1,7 @@
 package lk.easycar.rent.service.impl;
 
 //import com.sun.org.apache.xpath.internal.operations.Mult;
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.meta.CustomerMetaDTO;
 import lk.easycar.rent.entity.Customer;
@@ -78,6 +79,11 @@ public class CustomerServiceImpl implements CustomerService {
         List<Customer> all = customerRepo.findAll();
         return mapper.map(all, new TypeToken<List<CustomerDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(customerRepo.getLastIndex());
     }
 }
 
