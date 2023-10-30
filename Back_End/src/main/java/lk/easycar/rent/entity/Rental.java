@@ -1,6 +1,7 @@
 package lk.easycar.rent.entity;
 
 import lk.easycar.rent.dto.RentCarDetailDTO;
+import lk.easycar.rent.dto.RentalDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class Rental {
     @Id
     private String rentID;
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
+    @JoinColumn(name = "cusID",referencedColumnName = "customerID")
     private Customer cusID;
     private String pickupDate;
     private String pickupTime;
@@ -26,8 +27,7 @@ public class Rental {
     private String status;
     private String declineReason;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
     private List<RentCarDetail> rentDetails;
-
 
 }

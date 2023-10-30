@@ -4,23 +4,21 @@ import lk.easycar.rent.entity.Car;
 import lk.easycar.rent.entity.Driver;
 import lk.easycar.rent.entity.Payment;
 import lk.easycar.rent.entity.Rental;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Getter
+@Setter
 @Data
 public class RentCarDetailDTO {
 
     private String rentID;
     private String carID;
     private String driverID;
-    private String  paymentID;
+    private PaymentDTO  payment;
 
-    private PaymentDTO paymentDTO;
 
 
 }
