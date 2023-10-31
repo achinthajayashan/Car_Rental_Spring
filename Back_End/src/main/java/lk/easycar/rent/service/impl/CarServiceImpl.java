@@ -1,6 +1,7 @@
 package lk.easycar.rent.service.impl;
 
 import lk.easycar.rent.dto.CarDTO;
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.entity.Car;
 import lk.easycar.rent.entity.Customer;
@@ -101,5 +102,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public void deleteCar(String carId) {
         carRepo.deleteById(carId);
+    }
+
+    @Override
+    public CustomDTO carIdGenerate() {
+        return new CustomDTO(carRepo.getLastIndex());
     }
 }

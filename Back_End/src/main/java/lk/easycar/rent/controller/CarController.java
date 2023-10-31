@@ -1,6 +1,7 @@
 package lk.easycar.rent.controller;
 
 import lk.easycar.rent.dto.CarDTO;
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.UserDTO;
 import lk.easycar.rent.entity.Car;
@@ -53,5 +54,10 @@ public class CarController {
     public ResponseUtil deleteCar(@RequestParam String carId) {
         carService.deleteCar(carId);
         return new ResponseUtil("OK", "Successfully Deleted. :" + carId, null);
+    }
+
+    @GetMapping(path = "/IdGenerate")
+    public @ResponseBody CustomDTO carIdGenerate() {
+        return carService.carIdGenerate();
     }
 }

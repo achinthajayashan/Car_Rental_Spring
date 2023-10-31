@@ -1,5 +1,6 @@
 $('#rentCarDeBG').hide();
 loadCarDetails();
+$('#loginBG').hide();
 
 
 
@@ -105,11 +106,17 @@ $('#btnCloseRentDetail').click(function () {
     $('#rentCarDeBG').hide();
 });
 
-$('#rentCarDeBG').click(function () {
-    this.hide();
+// $('#rentCarDeBG').click(function () {
+//     this.hide();
+// });
+
+$('#btnViewCart').click(function () {
+    $('#loginBG').show();
 });
 
-
+$('#closeLogin').click(function () {
+    $('#loginBG').hide();
+});
 
 
 $("#btnRequestRentr").click(function () {

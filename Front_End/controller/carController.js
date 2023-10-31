@@ -1,6 +1,8 @@
 loadAllCars();
 $('#carDetailsPopupBg').hide();
 
+generateCarID();
+
 
 function loadAllCars() {
     $("#tblDrivers").empty();
@@ -61,6 +63,7 @@ $('#btnAddCar').click(function () {
         processData: false,
         success: function (res) {
             alert(res.message);
+            loadAllCars();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -187,3 +190,28 @@ $('#btnUpdateCar').click(function () {
         }
     });
 });
+
+function generateCarID() {
+    $("#txtCarId").val("CAR-001");
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/car/IdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#txtCarId").val("CAR-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#txtCarId").val("CAR-0" + tempId);
+            } else {
+                $("#txtCarId").val("CAR-" + tempId);
+            }
+        },
+        error: function (ob, statusText, error) {
+        }
+    });
+}
