@@ -45,6 +45,9 @@
 
         </div>
 
+        <button class="btn btn-dark ms-3" type="button" id="btnViewCart">
+          <a class="text-decoration-none text-white menu-size"><i class="fa-solid fa-cart-shopping"></i></a></button>
+
         <button class="btn btn-primary ms-3" type="button" id="btnViewSignIn">
           <a class="text-decoration-none text-white menu-size"><i class="fa-solid fa-sign-in-alt"></i></a></button>
 
@@ -136,7 +139,6 @@
           <div class="input ms-3 me-3">
             <label for="txtPickupDate">Pickup Time</label>
             <input type="time" name="pickupTime" id="txtPickupTime" placeholder="Pickup Time" class="input me-3 ms-3">
-
           </div>
 
         </div>
@@ -163,6 +165,49 @@
 
     </div>
     <button class="btn text-white mt-5 z-3" id="btnCloseRentDetail">Close</button>
+  </section>
+
+  <section class="container-fluid bg-transparent position-fixed fixed-top z-2" id="loginBG">
+    <div class="bg-white d-flex z-3 rounded" id="loginMainDiv">
+
+      <div class="container" id="loginImgDiv">
+        <table class="table mt-3">
+          <thead class="table-header bg-primary text-white">
+          <td>Car ID</td>
+          <td>Car Brand</td>
+          <td>Driver</td>
+          <td>Wavier Slip</td>
+          <td>Action</td>
+          </thead>
+        </table>
+      </div>
+      <div id="loginTextDiv">
+
+        <label for="txtPickupDate2" class="text-start">Pickup Date</label>
+        <input type="date" name="pickupDate" id="txtPickupDate2" placeholder="Pickup Date" class="input me-3 ms-3 inputFull mt-1">
+
+        <label for="txtPickupTime2" class="mt-4">Pickup Time</label>
+        <input type="time" name="pickupTime" id="txtPickupTime2" placeholder="Pickup Time" class="input me-3 ms-3 mt-1">
+
+        <select name="driverGetting2" id="txtDriverGetting2" class="input me-3 ms-3 mt-4">
+          <option value="null" selected>With Driver Or Not</option>
+          <option value="available">With Driver</option>
+          <option value="non-available">Without Driver</option>
+        </select>
+
+<!--        <select name="driverGetting2" id="txtDriverGetting2" class="input me-3 ms-3">-->
+<!--          <option value="null" selected>With Driver Or Not</option>-->
+<!--          <option value="available">With Driver</option>-->
+<!--          <option value="non-available">Without Driver</option>-->
+<!--        </select>-->
+
+        <input class="input mb-3 mt-4" placeholder="Duration" type="number" id="txtDuration2">
+
+        <button class="btn btn-primary mt-4" id="btnRequestRent">Request Rent</button>
+        <p id="closeLogin" class="text-danger mt-3"><i class="fa-solid fa-circle-xmark me-2"></i>Close</p>
+      </div>
+
+    </div>
   </section>
 
 </main>
