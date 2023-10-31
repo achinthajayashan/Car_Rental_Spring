@@ -193,9 +193,10 @@ $("#btnRequestRent").click(function () {
     for (let i = 0; i < $("#tblCart tr").length; i++) {
 
         let plusOne=i+1;
+        let rentID=$("#txtRentID2").val();
 
         let payment = {
-            paymentID : "PAY-"+plusOne,
+            paymentID : "PAY-"+rentID+"-"+plusOne,
             waiverDeductions : 0,
             waiverSlip : null,
             extraMileagePayment : 0
@@ -219,10 +220,10 @@ $("#btnRequestRent").click(function () {
 
         let rentOB = {
             rentID: rentID,
-            pickUpDate: pickUpDate,
-            pickUpTime: pickUpTime,
+            pickupDate: pickUpDate,
+            pickupTime: pickUpTime,
             duration: duration,
-            rentType: rentType,
+            status: rentType,
             customerID: customerID,
             rentDetails: rentDetails
         }
