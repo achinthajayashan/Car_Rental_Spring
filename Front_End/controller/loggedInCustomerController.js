@@ -16,9 +16,10 @@ function loadCarDetails() {
             console.log(res)
 
             for (let i of res) {
+
                 console.log(i);
-                // let url1 = i.image.front_View;
-                $("#carViewSection").append(`<div class="col-md-3 carViewDiv bg-white shadow rounded-2" >
+
+                let carDiv = $(`<div class="col-md-3 carViewDiv bg-white shadow rounded-2" >
           <div class="slideshow-container mt-3">
             <div class="slide">
               <img src="" alt="Image 1" id="loadFrontImage">
@@ -39,6 +40,8 @@ function loadCarDetails() {
         <div class="text-center bg-primary text-white rounded">
           <h5 id="loadCarBrand">${i.brand}</h5>
         </div>
+        
+        <p class="visually-hidden" id="txtCarId2">${i.carID}</p>
 
         <div class="d-flex w-100 mb-0">
 
@@ -79,12 +82,45 @@ function loadCarDetails() {
 
         <div class="d-flex w-100 mt-5">
           <button class="btn w-50 bg-primary me-2 text-white" id="btnBookNowView" onclick="btnBookNowView()"><i class="fa-solid fa-receipt me-2"></i>Book Now</button>
-          <button class="btn w-50 bg-dark text-white"><i class="fa-solid fa-list me-2" onclick="btnAddToListView()"></i>Add To List</button>
+          <button class="btn w-50 bg-dark text-white btnAddToCart"><i class="fa-solid fa-list me-2"></i>Add To List</button>
         </div>
 
       </div>`);
+                // let url1 = i.image.front_View;
+                $("#carViewSection").append(carDiv)
+
 
             }
+            $(".btnAddToCart").click(function () {
+                let carIdClicked = $(this).parent().parent().children(":eq(3)").text();
+                console.log(carIdClicked);
+
+
+                for (let k= 0; k < res.length; k++) {
+                    if (res[k].carID == carIdClicked) {
+                        let carId = res[k].carID;
+                        // let reg = cars[k].regNo;
+                        let brand = res[k].brand;
+                        let transmissionType = res[k].transmissionType;
+                        let passenger = res[k].passenger;
+                        let fuel = res[k].fuelType;
+                        let wavier = res[k].wavierPayment;
+                        let price = res[k].freeMileageDailyPrice;
+
+
+                        let row = `<tr><td class="visually-hidden">${carId}</td><td>${brand}</td><td>${wavier}</td>    
+                                         <td><input class="form-check-input form-check form-switch border rounded" type="checkbox" id="flexSwitchCheckDefault"></td>
+                                         <td><input type="file" class="form-control" id="inputSlipImg"></td> 
+                                         <td><button type="button" class="btn btn-danger cartDeleteBtn">Remove</button></td>
+                                        </tr>`;
+
+                        $('#tblCart').append(row);
+
+                         removeRow();
+                    }
+                }
+            });
+
         }, error: function (error) {
             alert(error.responseJSON.message);
         }
@@ -95,12 +131,13 @@ function loadCarDetails() {
 function btnBookNowView() {
     console.log("clicked")
     $('#rentCarDeBG').show();
+
 }
 
 function btnAddToListView() {
     console.log("clicked")
-    alert("Please Log In to System for Add To List")
-}
+    // var carId3=this.parents($('#txtCarId2').val())
+    console.log($('#txtCarId2').val());}
 
 $('#btnCloseRentDetail').click(function () {
     $('#rentCarDeBG').hide();
@@ -137,4 +174,78 @@ $("#btnRequestRentr").click(function () {
             alert(error.responseJSON.message);
         }
     });
+
+
+});
+
+
+function removeRow() {
+    $('.cartDeleteBtn').off('click');
+    $('.cartDeleteBtn').click(function () {
+        $(this).closest('tr').remove();
+    });
+}
+
+
+$("#btnRequestRent").click(function () {
+    console.log("Clicked");
+    let rentDetails = [];
+    for (let i = 0; i < $("#tblCart tr").length; i++) {
+
+        let plusOne=i+1;
+
+        let payment = {
+            paymentID : "PAY-"+plusOne,
+            waiverDeductions : 0,
+            waiverSlip : null,
+            extraMileagePayment : 0
+        }
+        var rentDetail = {
+            carID: $("#tblCart").children(`:eq(${i})`).children(":eq(0)").text(),
+            rentID: $("#txtRentID2").val(),
+            driverID: "DRI-001",
+            payment:payment
+        }
+        rentDetails.push(rentDetail);
+    }
+
+    for (let i = 0; i < $("#tblCart tr").length; i++) {
+        let rentID = $("#txtRentID2").val();
+        let pickUpDate = $("#txtPickupDate2").val();
+        let pickUpTime = $("#txtPickupTime2").val();
+        let duration = $("#txtDuration2").val();
+        let rentType = "PENDING";
+        let customerID = "C00-001";
+
+        let rentOB = {
+            rentID: rentID,
+            pickUpDate: pickUpDate,
+            pickUpTime: pickUpTime,
+            duration: duration,
+            rentType: rentType,
+            customerID: customerID,
+            rentDetails: rentDetails
+        }
+        // console.log(rentDetails)
+        console.log(rentOB)
+
+
+        $.ajax({
+            url: "http://localhost:8080/Car_rent/Back_End_war/rent/manyRents",
+            method: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(rentOB),
+            success: function (res) {
+               alert(res.message);
+            },
+            error: function (error) {
+                console.log(error);
+                // let message = JSON.parse(error.responseText).message;
+                // unSuccessUpdateAlert("Rent", message);
+            }
+
+        });
+    }
+    // $("#cartTable").empty();
 });

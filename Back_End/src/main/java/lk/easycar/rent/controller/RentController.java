@@ -38,6 +38,12 @@ public class RentController {
         return new ResponseUtil("Ok","Successfully Added",rentalDTO);
     }
 
+    @PostMapping(path = "/manyRents")
+    public ResponseUtil requestRents(@RequestBody RentalDTO dto) {
+        rentalService.requestRent(dto);
+        return new ResponseUtil("Ok", "Successfully Purchased.!", dto);
+    }
+
 
     @GetMapping
     public ResponseUtil getAllRentals(){
