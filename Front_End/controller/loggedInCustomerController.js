@@ -120,7 +120,7 @@ function loadCarDetails() {
 
             }
             $(".btnAddToCart").click(function () {
-                let carIdClicked = $(this).parent().parent().children(":eq(3)").text();
+                let carIdClicked = $(this).parent().parent().children(":eq(2)").text();
                 console.log(carIdClicked);
 
 
