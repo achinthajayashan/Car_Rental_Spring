@@ -105,10 +105,10 @@ function bindTrEvents() {
                 $("#lblfreeMileageMonthly").text(res.freeMileageMonthly);
                 $("#lblfreeMileageMonthlyPrice").text(res.freeMileageMonthlyPrice);
 
-                // $("#frontImage").prop(res.frontImage);
-                // $("#RearImage").prop(res.RearImage);
-                // $("#sideImage").prop(res.sideImage);
-                // $("#interiorImage").prop(res.interiorImage);
+                $("#frontImage").attr('src',"../"+res.frontImage);
+                $("#RearImage").attr('src',"../"+res.rearImage);
+                $("#sideImage").attr('src',"../"+res.sideImage);
+                $("#interiorImage").attr('src',"../"+res.interiorImage);
 
 
                 $('#btnEditCarDetail').click(function () {

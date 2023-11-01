@@ -1,5 +1,6 @@
 $('#rentCarDeBG').hide();
 loadCarDetails();
+generateRentID();
 $('#loginBG').hide();
 
 
@@ -12,6 +13,7 @@ function loadCarDetails() {
         method: "GET",
         dataType: "json",
         success: function (res) {
+            generateRentID();
 
             console.log(res)
 
@@ -25,13 +27,13 @@ function loadCarDetails() {
               <img src="../${i.frontImage}" alt="Image 1" id="loadFrontImage" class="slideImg" width="100%">
             </div>
             <div class="slide fade">
-              <img src="../${i.sideImage}" id="loadRearImage" class="slideImg" width="100%">
+              <img src="../${i.RearImage}" id="loadRearImage" class="slideImg" width="100%">
             </div>
             <div class="slide fade">
-              <img src="../${i.frontImage}" id="loadSideImage" class="slideImg" width="100%">
+              <img src="../${i.sideImage}" id="loadSideImage" class="slideImg" width="100%">
             </div>
             <div class="slide fade">
-              <img src="../${i.sideImage}" id="loadInteriorImage" class="slideImg" width="100%">
+              <img src="../${i.interiorImage}" id="loadInteriorImage" class="slideImg" width="100%">
             </div>
         </div>
 
@@ -269,6 +271,37 @@ $("#btnRequestRent").click(function () {
     }
     // $("#cartTable").empty();
 });
+
+
+function generateRentID() {
+    $("#txtRentID2").val("R00-001");
+    $("#txtRentID").val("R00-001");
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/rent/IdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#txtRentID2").val("R00-00" + tempId);
+                $("#txtRentID").val("R00-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#txtRentID2").val("R00-0" + tempId);
+                $("#txtRentID").val("R00-0" + tempId);
+            } else {
+                $("#txtRentID2").val("R00-" + tempId);
+                $("#txtRentID").val("R00-" + tempId);
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+}
 
 
 

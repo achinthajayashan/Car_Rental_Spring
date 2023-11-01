@@ -1,5 +1,6 @@
 package lk.easycar.rent.controller;
 
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.PaymentDTO;
 import lk.easycar.rent.dto.RentCarDetailDTO;
 import lk.easycar.rent.dto.RentalDTO;
@@ -29,6 +30,7 @@ public class RentController {
 
         rentCarDetailDTO.setPayment(paymentDTO);
 
+
         System.out.println(rentalDTO);
         System.out.println(paymentDTO);
 
@@ -49,5 +51,11 @@ public class RentController {
     public ResponseUtil getAllRentals(){
         return new ResponseUtil("OK","Successfully Loaded",rentalService.getAllRentals());
     }
+
+    @GetMapping(path = "/IdGenerate")
+    public @ResponseBody CustomDTO rentIdGenerate() {
+        return rentalService.rentIdGenerate();
+    }
+
 
 }

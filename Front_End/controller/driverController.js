@@ -1,7 +1,7 @@
 
 loadAllDrivers();
 
-$('#driverDetailsPopupBg').show();
+$('#driverDetailsPopupBg').hide();
 driverbindTrEvents();
 
 // Save Driver
@@ -90,8 +90,8 @@ function driverbindTrEvents() {
                     $("#txtDriverName").val(res.driverName);
                     $("#txtDriverEmail").val(res.email);
                     $("#txtDriverContact").val(res.contactNo);
-                    $("#driverFront_view").prop(res.frontImage);
-                    $("#driverBack_view").prop(res.backImage);
+                    $("#driverFront_view").src("../"+res.frontImage);
+                    $("#driverBack_view").src("../"+res.backImage);
                     $("#txtDriverUserName").val(res.user.userName);
                     $("#txtDriverPassword").val(res.user.password);
 

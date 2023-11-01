@@ -13,10 +13,12 @@ function getAllPayments() {
             for (let i of res.data) {
                 let paymentID = i.paymentID;
                 const waiverDeductions = String(i.waiverDeductions);
-                let paymentSlip = i.paymentSlip;
+                let paymentSlip = i.waiverSlip;
                 let extraMilleagePayment = String(i.extraMileagePayment);
 
-                let row = "<tr><td>" + paymentID + "</td><td>" + "" + "</td><td>" + waiverDeductions + "</td><td>" + extraMilleagePayment + "</td><td>" + "" + "</td></tr>";
+                console.log(paymentSlip)
+
+                let row = "<tr><td>" + paymentID + "</td><td><img src=' "+"../"+paymentSlip+" ' width='100px'></td><td>" + "" + "</td><td>" + waiverDeductions + "</td><td>" + extraMilleagePayment + "</td><td>" + "" + "</td></tr>";
                 $("#tblPayments").append(row);
 
                 // console.log(forntImage);

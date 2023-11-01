@@ -1,5 +1,6 @@
 package lk.easycar.rent.service.impl;
 
+import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.RentalDTO;
 import lk.easycar.rent.entity.Customer;
@@ -77,5 +78,10 @@ public class RentalServiceImpl implements RentalService {
         List<Rental> all = rentalRepo.findAll();
         return mapper.map(all, new TypeToken<List<RentalDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public CustomDTO rentIdGenerate() {
+        return new CustomDTO(rentalRepo.getLastIndex());
     }
 }

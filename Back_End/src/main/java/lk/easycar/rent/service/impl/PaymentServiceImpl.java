@@ -2,6 +2,7 @@ package lk.easycar.rent.service.impl;
 
 import lk.easycar.rent.dto.PaymentDTO;
 import lk.easycar.rent.dto.RentalDTO;
+import lk.easycar.rent.dto.meta.PaymentMetaDTO;
 import lk.easycar.rent.entity.Driver;
 import lk.easycar.rent.entity.Payment;
 import lk.easycar.rent.entity.Rental;
@@ -56,9 +57,9 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public ArrayList<PaymentDTO> getAllPayments() {
+    public ArrayList<PaymentMetaDTO> getAllPayments() {
         List<Payment> all = paymentRepo.findAll();
-        return mapper.map(all, new TypeToken<List<PaymentDTO>>() {
+        return mapper.map(all, new TypeToken<List<PaymentMetaDTO>>() {
         }.getType());
     }
 }
