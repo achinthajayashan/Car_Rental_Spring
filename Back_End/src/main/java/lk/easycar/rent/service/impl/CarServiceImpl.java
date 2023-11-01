@@ -3,6 +3,7 @@ package lk.easycar.rent.service.impl;
 import lk.easycar.rent.dto.CarDTO;
 import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
+import lk.easycar.rent.dto.meta.CarMetaDTO;
 import lk.easycar.rent.entity.Car;
 import lk.easycar.rent.entity.Customer;
 import lk.easycar.rent.repo.CarRepo;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +34,12 @@ public class CarServiceImpl implements CarService {
 
         try {
             String projectPath = System.getProperty("user.dir");
-            System.out.println("Project Location: " + projectPath);
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
+
+//            String projectPath = System.getProperty("user.dir");
+//            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(sourceCodePath + "/uploads");
+            System.out.println(sourceCodePath);
             uploadsDir.mkdir();
 
             dto.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontImage().getOriginalFilename()));
@@ -57,9 +63,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public ArrayList<CarDTO> getAllCars() {
+    public ArrayList<CarMetaDTO> getAllCars() {
         List<Car> all = carRepo.findAll();
-        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        return mapper.map(all, new TypeToken<List<CarMetaDTO>>() {
         }.getType());
     }
 
@@ -74,9 +80,12 @@ public class CarServiceImpl implements CarService {
 
         try {
             String projectPath = System.getProperty("user.dir");
-            System.out.println("Project Location: " + projectPath);
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
+
+//            String projectPath = System.getProperty("user.dir");
+//            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(sourceCodePath + "/uploads");
+            System.out.println(sourceCodePath);
             uploadsDir.mkdir();
 
             dto.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontImage().getOriginalFilename()));

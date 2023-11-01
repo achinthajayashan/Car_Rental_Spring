@@ -1,7 +1,15 @@
 package lk.easycar.rent.dto.meta;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class CarMetaDTO {
     String carID;
     String regNo;
@@ -20,7 +28,7 @@ public class CarMetaDTO {
     String freeMileageMonthly;
     String freeMileageMonthlyPrice;
     String frontImage;
-    String  RearImage;
+    String  rearImage;
     String  sideImage;
     String  interiorImage;
 }

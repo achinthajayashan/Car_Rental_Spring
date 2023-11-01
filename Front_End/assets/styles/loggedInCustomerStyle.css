@@ -217,23 +217,6 @@
 }
 
 
-.slideshow-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: start;
-    height: 200px;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 button {
     cursor: pointer;
@@ -252,4 +235,31 @@ button {
 .btn-click{
     font-size: 30px;
     cursor: pointer;
+}
+
+
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: start;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 3s; /* Change the duration as needed */
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
 }

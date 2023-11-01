@@ -21,21 +21,19 @@ function loadCarDetails() {
 
                 let carDiv = $(`<div class="col-md-3 carViewDiv bg-white shadow rounded-2" >
           <div class="slideshow-container mt-3">
-            <div class="slide">
-              <img src="" alt="Image 1" id="loadFrontImage">
+            <div class="slide fade">
+              <img src="../${i.frontImage}" alt="Image 1" id="loadFrontImage" class="slideImg" width="100%">
             </div>
-            <div class="slide">
-              <img src="" alt="Image 2" id="loadRearImage">
+            <div class="slide fade">
+              <img src="../${i.sideImage}" id="loadRearImage" class="slideImg" width="100%">
             </div>
-            <div class="slide">
-              <img src="" alt="Image 3" id="loadSideImage">
+            <div class="slide fade">
+              <img src="../${i.frontImage}" id="loadSideImage" class="slideImg" width="100%">
             </div>
-            <div class="slide">
-              <img src="" alt="Image 4" id="loadInteriorImage">
+            <div class="slide fade">
+              <img src="../${i.sideImage}" id="loadInteriorImage" class="slideImg" width="100%">
             </div>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-0 btnNexxtSlide"><button class="prev btn"  ><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="next btn"><i class="fa-solid fa-chevron-right"></i></button></div>
 
         <div class="text-center bg-primary text-white rounded">
           <h5 id="loadCarBrand">${i.brand}</h5>
@@ -89,6 +87,34 @@ function loadCarDetails() {
                 // let url1 = i.image.front_View;
                 $("#carViewSection").append(carDiv)
 
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('.slide');
+
+                function showSlide(index) {
+                    if (index < 0) {
+                        index = slides.length - 1;
+                    } else if (index >= slides.length) {
+                        index = 0;
+                    }
+
+                    slides[currentSlide].style.display = 'none';
+                    slides[index].style.display = 'block';
+
+                    currentSlide = index;
+                }
+
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
+
+                function startSlideshow() {
+                    setInterval(nextSlide, 3000); // Change the interval as needed (e.g., 3000 milliseconds = 3 seconds)
+                }
+
+// Initial display of the first slide
+                showSlide(currentSlide);
+                startSlideshow();
+
 
             }
             $(".btnAddToCart").click(function () {
@@ -134,18 +160,11 @@ function btnBookNowView() {
 
 }
 
-function btnAddToListView() {
-    console.log("clicked")
-    // var carId3=this.parents($('#txtCarId2').val())
-    console.log($('#txtCarId2').val());}
-
 $('#btnCloseRentDetail').click(function () {
     $('#rentCarDeBG').hide();
 });
 
-// $('#rentCarDeBG').click(function () {
-//     this.hide();
-// });
+
 
 $('#btnViewCart').click(function () {
     $('#loginBG').show();
@@ -250,3 +269,7 @@ $("#btnRequestRent").click(function () {
     }
     // $("#cartTable").empty();
 });
+
+
+
+

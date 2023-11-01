@@ -4,6 +4,7 @@ import lk.easycar.rent.dto.CarDTO;
 import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.UserDTO;
+import lk.easycar.rent.dto.meta.CarMetaDTO;
 import lk.easycar.rent.entity.Car;
 import lk.easycar.rent.service.CarService;
 import lk.easycar.rent.util.ResponseUtil;
@@ -33,7 +34,7 @@ public class CarController {
     }
 
     @GetMapping(path = "/view")
-    public ArrayList<CarDTO> getAllCarsList(){
+    public ArrayList<CarMetaDTO> getAllCarsList(){
         return carService.getAllCars();
     }
 

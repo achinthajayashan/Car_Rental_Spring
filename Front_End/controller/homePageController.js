@@ -14,52 +14,6 @@ $('#btnSign').click(function () {
     window.open("../pages/adminPanel.html","_self");
 });
 
-// let currentSlide = 0;
-// const slideshowContainers =document.querySelectorAll('.slideshow-container');
-//
-//
-// slideshowContainers.forEach(slideshow => {
-//     const slides = slideshow.querySelectorAll('.slide');
-//
-//     function showSlide(index) {
-//         if (index < 0) {
-//             index = slides.length - 1;
-//         } else if (index >= slides.length) {
-//             index = 0;
-//         }
-//
-//         slides[currentSlide].style.display = 'none';
-//         slides[index].style.display = 'block';
-//
-//         currentSlide = index;
-//     }
-//
-//     showSlide(currentSlide);
-//
-//     $('.btnNexxtSlide').click(function () {
-//         showSlide(currentSlide -1);
-//     })
-//
-//     // function changeSlide(offset) {
-//     //
-//     // }
-//
-//
-//     // Now the 'childElements' variable contains all the child elements within the current slideshow container.
-//
-//     // You can work with 'childElements' here for each slideshow container.
-// });
-//
-// const  slides2 = slides.length;
-//
-//
-//
-
-
-// Initial display of the first slide
-
-
-
 function loadCarDetails() {
     $("#carViewSection").empty();
 
@@ -88,8 +42,8 @@ function loadCarDetails() {
               <img src="" alt="Image 4" id="loadInteriorImage">
             </div>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-0 btnNexxtSlide"><button class="prev btn"  ><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="next btn"><i class="fa-solid fa-chevron-right"></i></button></div>
+        <div class="d-flex align-items-center justify-content-center mt-0 btnNexxtSlide"><button class="prev btn"  onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="next btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button></div>
 
         <div class="text-center bg-primary text-white rounded">
           <h5 id="loadCarBrand">${i.brand}</h5>

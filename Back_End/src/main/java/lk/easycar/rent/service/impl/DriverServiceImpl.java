@@ -17,6 +17,8 @@ import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,9 +42,12 @@ public class DriverServiceImpl implements DriverService {
         try {
 
             String projectPath = System.getProperty("user.dir");
-            System.out.println("Project Location: " + projectPath);
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
+
+//            String projectPath = System.getProperty("user.dir");
+//            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(sourceCodePath + "/uploads");
+            System.out.println(sourceCodePath);
             uploadsDir.mkdir();
 
             driverDTO.getFrontImage().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + driverDTO.getFrontImage().getOriginalFilename()));

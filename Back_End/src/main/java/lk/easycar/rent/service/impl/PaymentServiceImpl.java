@@ -13,6 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +32,25 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public void addPayment(PaymentDTO paymentDTO) {
         Payment map =mapper.map(paymentDTO,Payment.class);
+
+        try {
+
+            String projectPath = System.getProperty("user.dir");
+            Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
+
+//            String projectPath = System.getProperty("user.dir");
+//            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(sourceCodePath + "/uploads");
+            System.out.println(sourceCodePath);
+            uploadsDir.mkdir();
+
+            paymentDTO.getWaiverSlip().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + paymentDTO.getWaiverSlip().getOriginalFilename()));
+
+            map.setWaiverSlip("uploads/" + paymentDTO.getWaiverSlip().getOriginalFilename());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         paymentRepo.save(map);
     }

@@ -32,7 +32,7 @@ public class Car {
     String freeMileageMonthly;
     String freeMileageMonthlyPrice;
     String frontImage;
-    String RearImage;
+    String rearImage;
     String sideImage;
     String interiorImage;
 }
