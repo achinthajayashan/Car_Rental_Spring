@@ -1,5 +1,7 @@
 let BASE_URL="http://localhost:8080/Car_rent/Back_End_war/"
 
+uploadDirectory="../uploads/"
+
 generateCustomerID();
 loadAllCustomers();
 $('#backToSignIn').click(function () {
@@ -51,7 +53,7 @@ function loadAllCustomers() {
                 let password = i.user.password;
                 let role = i.user.role;
 
-                let row = "<tr><td>" + customerID + "</td><td>" + name + "</td><td>" + address + "</td><td>" + contactNo + "</td><td>" + email + "</td></tr>";
+                let row = "<tr><td>" + customerID + "</td><td>" + name + "</td><td>" + address + "</td><td>" + contactNo + "</td><td>" + email + "</td><td><img src=' "+"/"+forntImage+" ' width='100px'></td><td><img src=' "+"/"+backImage+" ' width='100px'></td></tr>";
                 $("#tblCustomers").append(row);
 
                 console.log(forntImage);

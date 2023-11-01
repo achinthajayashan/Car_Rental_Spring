@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public interface CustomerService {
     void addCustomer(CustomerDTO dto);
 
-    ArrayList<CustomerDTO> getAllCustomers();
+    ArrayList<CustomerMetaDTO> getAllCustomers();
 
     CustomDTO customerIdGenerate();
 }

@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +45,12 @@ public class CustomerServiceImpl implements CustomerService {
         try {
 
             String projectPath = System.getProperty("user.dir");
-            System.out.println("Project Location: " + projectPath);
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
+
+//            String projectPath = System.getProperty("user.dir");
+//            System.out.println("Project Location: " + projectPath);
+            File uploadsDir = new File(sourceCodePath + "/uploads");
+            System.out.println(sourceCodePath);
             uploadsDir.mkdir();
 
 //            if (!uploadsDir.exists()) {
@@ -75,9 +80,9 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ArrayList<CustomerDTO> getAllCustomers() {
+    public ArrayList<CustomerMetaDTO> getAllCustomers() {
         List<Customer> all = customerRepo.findAll();
-        return mapper.map(all, new TypeToken<List<CustomerDTO>>() {
+        return mapper.map(all, new TypeToken<List<CustomerMetaDTO>>() {
         }.getType());
     }
 
