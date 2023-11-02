@@ -29,8 +29,7 @@ public class RentController {
         rentalDTO.setRentDetails(Collections.singletonList(rentCarDetailDTO));
 
         rentCarDetailDTO.setPayment(paymentDTO);
-
-
+        paymentDTO.setWaiverSlip(paymentDTO.getWaiverSlip());
         System.out.println(rentalDTO);
         System.out.println(paymentDTO);
 

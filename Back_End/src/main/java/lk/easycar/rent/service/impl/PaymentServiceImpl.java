@@ -30,11 +30,13 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Autowired
     private ModelMapper mapper;
+
     @Override
     public void addPayment(PaymentDTO paymentDTO) {
         Payment map =mapper.map(paymentDTO,Payment.class);
 
         try {
+            System.out.println("Try Catch");
 
             String projectPath = System.getProperty("user.dir");
             Path sourceCodePath = Paths.get(projectPath).getParent().getParent().resolve("Projects/Easy Car Rental/Front_End");
@@ -47,7 +49,8 @@ public class PaymentServiceImpl implements PaymentService {
 
             paymentDTO.getWaiverSlip().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + paymentDTO.getWaiverSlip().getOriginalFilename()));
 
-            map.setWaiverSlip("uploads/" + paymentDTO.getWaiverSlip().getOriginalFilename());
+            map.setWaiverSlip("uploads/" + paymentDTO.getWaiverSlip().getName());
+            System.out.println("uploads/" + paymentDTO.getWaiverSlip().getName());
 
         } catch (IOException e) {
             throw new RuntimeException(e);

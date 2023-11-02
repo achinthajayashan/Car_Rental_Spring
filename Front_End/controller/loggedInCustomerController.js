@@ -231,7 +231,7 @@ $("#btnRequestRent").click(function () {
         rentDetails.push(rentDetail);
     }
 
-    for (let i = 0; i < $("#tblCart tr").length; i++) {
+    // for (let i = 0; i < $("#tblCart tr").length; i++) {
         let rentID = $("#txtRentID2").val();
         let pickUpDate = $("#txtPickupDate2").val();
         let pickUpTime = $("#txtPickupTime2").val();
@@ -268,7 +268,7 @@ $("#btnRequestRent").click(function () {
             }
 
         });
-    }
+    // }
     // $("#cartTable").empty();
 });
 
