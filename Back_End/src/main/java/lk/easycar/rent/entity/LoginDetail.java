@@ -17,8 +17,12 @@ public class LoginDetail {
     private String loginID;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "userName",referencedColumnName = "userName",nullable = false)
-    private User userName;
-    private String dateTime;
+//    @JoinColumn(name = "user",referencedColumnName = "user",nullable = false)
+    private User user;
+    private String date;
+
+    private String time;
+
+
 
 }

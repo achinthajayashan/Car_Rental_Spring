@@ -18,8 +18,12 @@ public class LoginDetailController {
 
 
     @PostMapping
-    public ResponseUtil saveLoginDetail(LoginDetailDTO loginDetailDTO){
-        service.saveLoginDetail(loginDetailDTO);
+    public ResponseUtil saveLoginDetail(@RequestBody LoginDetailDTO loginDetailDTO){
+//        LoginDetailDTO loginDetailDTO= new LoginDetailDTO(loginID,new UserDTO(userName,"",""),date);
+        System.out.println(loginDetailDTO);
+       service.saveLoginDetail(loginDetailDTO);
+
+
         return new ResponseUtil("OK","Successfully Loaded",loginDetailDTO);
     }
 

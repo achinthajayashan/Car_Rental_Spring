@@ -12,40 +12,42 @@ function getallusers() {
         success: function (resp) {
                     if (resp.password === password) {
 
-                        var currentDateTime = new Date().toLocaleString();
-                        console.log(currentDateTime);
+                        let currentDate = new Date().toJSON().slice(0, 10);
 
-                        let loginId=resp.userName+currentDateTime;
-                        let loggedUserName =resp.userName;
-                        let localDateandTime=currentDateTime;
+                        const d = new Date();
+                        let hours =new Date().toLocaleTimeString();;
 
+                        let loginId = resp.userName+currentDate+hours;
+                        let us = $('#txtUserName').val();
+                        let password = $('#txtPassword').val();
+                        let role = resp.role;
 
-                        console.log(loginId)
-                        let userOb={
-                            userName: resp.userName,
-                            password:resp.password,
-                            role:resp.role
+                        let user = {
+                            userName:us,
+                            password:password,
+                            role:role
                         }
 
-                        let loggedUser={
-                            loginId: loginId,
-                            userName:userOb,
-                            dateTime:currentDateTime
+                        let loginDetail = {
+                            loginID: loginId,
+                            user: user,
+                            date: currentDate,
+                            time: hours
                         }
 
+                        console.log(loginDetail);
 
                         $.ajax({
-                            url: "http://localhost:8080/Car_rent/Back_End_war/loginDetail",
-                            data:JSON.stringify(loggedUser),
-                            dataType: "JSON",
-                            method:"POST",
-                        success: function (resp) {
-                            alert("loginDetails saved")
-                        },
-
-                        error: function (error){
-                                alert("Login not saved");
-                        }
+                            url :"http://localhost:8080/Car_rent/Back_End_war/loginDetail",
+                            method : "post",
+                            data : JSON.stringify(loginDetail),
+                            contentType : 'application/json',
+                            success:function(){
+                                console.log("Success")
+                            },
+                            error : function(){
+                                console.log("Error")
+                            }
                         });
 
                         switch (resp.role) {
@@ -65,6 +67,7 @@ function getallusers() {
                                 alert("Check Your User Name ");
                                 break;
                         }
+
 
                     }else{
                         alert("Check Your Password");

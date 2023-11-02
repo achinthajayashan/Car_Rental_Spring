@@ -26,6 +26,8 @@ public class LoginDetailServiceImpl implements LoginDetailService {
     public void saveLoginDetail(LoginDetailDTO loginDetailDTO) {
         LoginDetail map =mapper.map(loginDetailDTO, LoginDetail.class);
 
+        System.out.println(map);
+
         loginDetailRepo.save(map);
     }
 }

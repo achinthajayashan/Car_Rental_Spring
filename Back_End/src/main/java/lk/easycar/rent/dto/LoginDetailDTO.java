@@ -12,6 +12,8 @@ import lombok.ToString;
 public class LoginDetailDTO {
 
     private String loginID;
-    private UserDTO userName;
-    private String dateTime;
+    private UserDTO user;
+    private String date;
+    private String time;
+
 }
