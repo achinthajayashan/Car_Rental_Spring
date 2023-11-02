@@ -204,3 +204,13 @@ main{
     margin: auto;
 }
 
+#rentalDetailPopup{
+    width: 75%;
+    height: 85%;
+    position: relative;
+    left: -50px;
+    right: 0;
+    top: -50px;
+    margin: auto;
+}
+

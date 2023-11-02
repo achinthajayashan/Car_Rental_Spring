@@ -27,7 +27,7 @@ function loadCarDetails() {
               <img src="../${i.frontImage}" alt="Image 1" id="loadFrontImage" class="slideImg" width="100%">
             </div>
             <div class="slide fade">
-              <img src="../${i.RearImage}" id="loadRearImage" class="slideImg" width="100%">
+              <img src="../${i.rearImage}" id="loadRearImage" class="slideImg" width="100%">
             </div>
             <div class="slide fade">
               <img src="../${i.sideImage}" id="loadSideImage" class="slideImg" width="100%">
