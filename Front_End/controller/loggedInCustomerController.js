@@ -243,7 +243,9 @@ $("#btnRequestRent").click(function () {
         let pickUpTime = $("#txtPickupTime2").val();
         let duration = $("#txtDuration2").val();
         let rentType = "PENDING";
-        let customerID = "C00-001";
+        let customerID = $('#txtLoggedCusID').text();
+
+        console.log(customerID);
 
         let rentOB = {
             rentID: rentID,
@@ -318,12 +320,15 @@ function getCusDetail(){
 
         success:function (res) {
             console.log(res);
-            let id = res.customerID;
+            let id = res.data.customerID;
             let name = res.data.name;
 
             $('#txtLoggedCusName').text(name);
+            $('#txtLoggedCusID').text(id);
+
 
             console.log(name);
+            console.log(id);
 
 
         },
