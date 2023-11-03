@@ -12,4 +12,6 @@ public interface CustomerService {
     ArrayList<CustomerMetaDTO> getAllCustomers();
 
     CustomDTO customerIdGenerate();
+
+    CustomerDTO getCusDetail(String userName);
 }

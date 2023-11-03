@@ -8,4 +8,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
 
     @Query(value = "SELECT customerID FROM Customer ORDER BY customerID DESC LIMIT 1", nativeQuery = true)
     String getLastIndex();
+
+    @Query(value = "SELECT * FROM Customer WHERE user_userName=?", nativeQuery = true)
+    Customer customerDetail(String userName);
 }

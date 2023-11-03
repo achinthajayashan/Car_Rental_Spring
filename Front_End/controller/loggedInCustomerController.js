@@ -3,6 +3,12 @@ loadCarDetails();
 generateRentID();
 $('#loginBG').hide();
 
+let userName = localStorage.getItem("username");
+// $('#txtLoggedCusName').text(userName);
+console.log(userName);
+
+getCusDetail();
+
 
 
 function loadCarDetails() {
@@ -301,6 +307,33 @@ function generateRentID() {
             console.log(error);
         }
     });
+}
+
+function getCusDetail(){
+    let userNameSend= userName;
+
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/customer?userName="+userNameSend,
+        method:"post",
+
+        success:function (res) {
+            console.log(res);
+            let id = res.customerID;
+            let name = res.data.name;
+
+            $('#txtLoggedCusName').text(name);
+
+            console.log(name);
+
+
+        },
+
+        error:function (error) {
+
+        }
+
+    })
+
 }
 
 

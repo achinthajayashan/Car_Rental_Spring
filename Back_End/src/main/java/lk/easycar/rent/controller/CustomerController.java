@@ -34,4 +34,10 @@ public class CustomerController {
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.customerIdGenerate();
     }
+
+    @PostMapping(params = {"userName"})
+    public ResponseUtil addCustomer(String userName){
+        CustomerDTO cusDetail = service.getCusDetail(userName);
+        return new ResponseUtil("Ok","Successfully Loaded",cusDetail);
+    }
 }

@@ -6,6 +6,11 @@ function getallusers() {
 
     let userName=$('#txtUserName').val();
     let password=$('#txtPassword').val();
+
+    localStorage.setItem("username", userName);
+
+
+
     $.ajax({
         url: "http://localhost:8080/Car_rent/Back_End_war/user?userName="+userName,
         dataType: 'json',
@@ -57,6 +62,7 @@ function getallusers() {
 
                             case "customer":
                                 window.open("../pages/logedInCustomer.html","_self");
+                                $('#txtLoggedCusName').text(userName);
                                 break;
 
                             case "driver":
