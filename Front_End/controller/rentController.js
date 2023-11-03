@@ -65,7 +65,7 @@ function getAllRents() {
                                 let wavier = resData[k].rentDetails[u].payment.waiverSlip;;
                                 let driverID = resData[k].rentDetails[u].driverID
 
-                                let row =`<tr><td>${carID}</td><td>${driverID}</td><td>${paymentID}</td><td><img src=' "+"/"+${wavier}+" ' width='100px'></td></tr>`;
+                                let row =`<tr><td>${carID}</td><td>${driverID}</td><td>${paymentID}</td><td><img src=' "+"/"+${wavier}+" ' width='100px'></td><td><button class='btn btn-dark btnPayLoad'>Pay Now</button></td></tr>`;
                                 $('#tblPopupRent').append(row);
 
                             }

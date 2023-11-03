@@ -483,6 +483,8 @@
                                     <option value="DECLINED">DECLINED</option>
                                     <option value="COMPLETED">COMPLETED</option>
                                 </select>                            </div>
+
+                            <button class="btn btn-dark w-25 me-4 h-50 mt-3" id="btnRentStatusUpdate">Update</button>
                         </div>
 
                         <div class="container mt-3 h-50">
@@ -493,6 +495,7 @@
                                 <td>Driver ID</td>
                                 <td>Payment ID</td>
                                 <td>Waiver Slip</td>
+                                <td>Action</td>
 
 
 
@@ -503,8 +506,42 @@
                             </table>
                         </div>
 
+                        <div class="d-flex mt-3 container bottom-0 w-100">
+                            <div class="d-flex flex-column w-25 align-items-center">
+                                <label for="dailyPriceInput">Price For Day</label>
+                                <input class="input w-75 mt-2" id="dailyPriceInput" readonly>
+                            </div>
+
+                            <div class="d-flex flex-column w-25 align-items-center">
+                                <label for="dailyPriceInput">Km s Per Day</label>
+                                <input class="input w-75 mt-2" id="dailyKmInput">
+                            </div>
+
+                            <div class="d-flex flex-column w-25 align-items-center">
+                                <label for="dailyPriceInput">Price Per Extra Km</label>
+                                <input class="input w-75 mt-2" id="pricePerExtraKm">
+                            </div>
+
+                            <div class="d-flex flex-column w-25 align-items-center">
+                                <label for="dailyPriceInput">Extra Km</label>
+                                <input class="input w-75 mt-2" id="extraKms">
+                            </div>
+
+<!--                            <div class="d-flex flex-column">-->
+<!--                                <label for="dailyPriceInput">Wavier Deductions</label>-->
+<!--                                <input class="input" id="dailyPriceInput">-->
+<!--                            </div>-->
+
+                            <div class="d-flex flex-column w-25 align-items-center">
+                                <label for="dailyPriceInput">Total</label>
+                                <input class="input w-75 mt-2" id="inputTotal">
+                            </div>
+                        </div>
+
+
+
                         <div class="d-flex mt-3 container bottom-0">
-                            <button class="btn btn-dark w-25 me-4" id="btnRentStatusUpdate">Update</button>
+
                             <button class="btn btn-danger w-25" id="btnRentalPopupClose">Close</button>
                         </div>
 
