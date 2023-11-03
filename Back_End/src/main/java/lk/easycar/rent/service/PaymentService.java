@@ -12,4 +12,6 @@ public interface PaymentService {
 
     ArrayList<PaymentMetaDTO> getAllPayments();
 
+    void updatePayment(String paymentID,String total);
+
 }

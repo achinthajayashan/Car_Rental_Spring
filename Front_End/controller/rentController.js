@@ -101,6 +101,22 @@ function getAllRents() {
                                                     let total =Number(extraTotal)+Number($('#dailyPriceInput').val());
 
                                                     $('#inputTotal').val(total);
+
+
+
+                                                    $.ajax({
+                                                        url:"http://localhost:8080/Car_rent/Back_End_war/payment?paymentID="+clickedPaymentID+"&total="+total,
+                                                        method:"post",
+
+                                                        success:function (res) {
+
+                                                        },
+
+                                                        error:function (error) {
+
+                                                        }
+
+                                                    })
                                                     //purchaseOrder();
                                                 }
 

@@ -65,4 +65,12 @@ public class PaymentServiceImpl implements PaymentService {
         return mapper.map(all, new TypeToken<List<PaymentMetaDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void updatePayment(String paymentID, String total) {
+        Payment payment = paymentRepo.findById(paymentID).get();
+        Payment map =mapper.map(payment,Payment.class);
+        map.setExtraMileagePayment(Double.parseDouble(total));
+        paymentRepo.save(map);
+    }
 }
