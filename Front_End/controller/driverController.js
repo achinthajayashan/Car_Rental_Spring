@@ -79,8 +79,8 @@ function driverbindTrEvents() {
                 $("#lblDriverName").text(res.driverName);
                 $("#lblDriverEmail").text(res.email);
                 $("#lblDriverContact").text(res.contactNo);
-                $("#back_View").prop(res.frontImage);
-                $("#side_View").prop(res.backImage);
+                $("#lblDriverFrontImg").attr('src',"../"+res.frontImage);
+                $("#lblDriverRearImg").attr('src',"../"+res.backImage);
                 $("#lblDriverUserName").text(res.user.userName);
                 $("#lblDriverPassword").text(res.user.password);
 
@@ -90,8 +90,8 @@ function driverbindTrEvents() {
                     $("#txtDriverName").val(res.driverName);
                     $("#txtDriverEmail").val(res.email);
                     $("#txtDriverContact").val(res.contactNo);
-                    $("#driverFront_view").src("../"+res.frontImage);
-                    $("#driverBack_view").src("../"+res.backImage);
+                    $("#driverFront_view").attr('src',"../"+res.frontImage);
+                    $("#driverBack_view").attr('src',"../"+res.backImage);
                     $("#txtDriverUserName").val(res.user.userName);
                     $("#txtDriverPassword").val(res.user.password);
 

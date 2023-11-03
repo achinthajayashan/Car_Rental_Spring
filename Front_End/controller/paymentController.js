@@ -18,7 +18,7 @@ function getAllPayments() {
 
                 console.log(paymentSlip)
 
-                let row = "<tr><td>" + paymentID + "</td><td><img src=' "+"../"+paymentSlip+" ' width='100px'></td><td>" + "" + "</td><td>" + waiverDeductions + "</td><td>" + extraMilleagePayment + "</td><td>" + "" + "</td></tr>";
+                let row = "<tr><td>" + paymentID + "</td><td><img src=' "+"../"+paymentSlip+" ' width='100px'></td><td>" + waiverDeductions + "</td><td>"+extraMilleagePayment+"</td></tr>";
                 $("#tblPayments").append(row);
 
                 // console.log(forntImage);
