@@ -4,7 +4,9 @@ import lk.easycar.rent.dto.CustomDTO;
 import lk.easycar.rent.dto.CustomerDTO;
 import lk.easycar.rent.dto.RentalDTO;
 import lk.easycar.rent.entity.Customer;
+import lk.easycar.rent.entity.RentCarDetail;
 import lk.easycar.rent.entity.Rental;
+import lk.easycar.rent.repo.CarRepo;
 import lk.easycar.rent.repo.RentalRepo;
 import lk.easycar.rent.service.RentalService;
 import org.modelmapper.ModelMapper;
@@ -24,6 +26,8 @@ public class RentalServiceImpl implements RentalService {
 
     @Autowired
     private RentalRepo rentalRepo;
+
+    private CarRepo carRepo;
 
 
 
@@ -83,5 +87,22 @@ public class RentalServiceImpl implements RentalService {
     @Override
     public CustomDTO rentIdGenerate() {
         return new CustomDTO(rentalRepo.getLastIndex());
+    }
+
+    @Override
+    public void updateStatus(String rentalID,String status) {
+        Rental rental = rentalRepo.findById(rentalID).get();
+        rental.setStatus(status);
+        rentalRepo.save(rental);
+
+        rental.getRentDetails();
+
+        String status1 = rental.getStatus();
+
+//        if (status1 .equals("DECLINED")){
+//
+//            rental.getRentDetails();
+//
+//        }
     }
 }

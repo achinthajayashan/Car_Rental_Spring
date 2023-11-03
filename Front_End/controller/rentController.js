@@ -65,7 +65,7 @@ function getAllRents() {
                                 let wavier = resData[k].rentDetails[u].payment.waiverSlip;;
                                 let driverID = resData[k].rentDetails[u].driverID
 
-                                let row =`<tr><td>${carID}</td><td>${driverID}</td><td>${paymentID}</td><td><img src=' "+"/"+wavier+" ' width='100px'></td></tr>`;
+                                let row =`<tr><td>${carID}</td><td>${driverID}</td><td>${paymentID}</td><td><img src=' "+"/"+${wavier}+" ' width='100px'></td></tr>`;
                                 $('#tblPopupRent').append(row);
 
                             }
@@ -84,17 +84,28 @@ function getAllRents() {
         }
     });
 }
-function rentReqTableBindEvents() {
-    $('#tblRentRequests>tr').click(function () {
-        $('#rentalDetailsPopupBg').show();
-
-
-    })
-}
-
-
 
 $('#btnRentalPopupClose').click(function () {
     $('#rentalDetailsPopupBg').hide();
 
 })
+
+$('#btnRentStatusUpdate').click(function () {
+
+    let updateId=$('#lblRentId').text();
+    let updatedStatus=$('#txtStatusRent').val();
+    console.log(updatedStatus);
+
+    $.ajax({
+        url: "http://localhost:8080/Car_rent/Back_End_war/rent?rentID="+updateId+"&status="+updatedStatus,
+        method: "post",
+        async:false,
+        success:function (res) {
+        },
+
+        error:function (error) {
+            console.log(error);
+        }
+        });
+
+});

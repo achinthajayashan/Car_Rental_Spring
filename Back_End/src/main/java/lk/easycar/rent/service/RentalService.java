@@ -13,4 +13,6 @@ public interface RentalService {
     ArrayList<RentalDTO> getAllRentals();
 
     CustomDTO rentIdGenerate();
+
+    void updateStatus(String rentalID,String status);
 }

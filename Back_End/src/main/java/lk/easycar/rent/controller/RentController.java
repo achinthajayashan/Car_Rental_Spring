@@ -24,7 +24,7 @@ public class RentController {
     @PostMapping
     public ResponseUtil requestRent(@ModelAttribute RentalDTO  rentalDTO, @ModelAttribute RentCarDetailDTO rentCarDetailDTO, @ModelAttribute PaymentDTO paymentDTO){
         rentalDTO.setCustomerID("C00-001");
-        rentalDTO.setStatus("Pending");
+        rentalDTO.setStatus("PENDING");
 
         rentalDTO.setRentDetails(Collections.singletonList(rentCarDetailDTO));
 
@@ -56,5 +56,11 @@ public class RentController {
         return rentalService.rentIdGenerate();
     }
 
+
+    @PostMapping(params = {"rentID","status"})
+    public ResponseUtil updateStatus(String rentID,String status) {
+        rentalService.updateStatus(rentID,status);
+        return new ResponseUtil("Ok", "Successfully Purchased.!", status);
+    }
 
 }
