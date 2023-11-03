@@ -68,6 +68,46 @@ function getAllRents() {
                                 let row =`<tr><td>${carID}</td><td>${driverID}</td><td>${paymentID}</td><td><img src=' "+"/"+${wavier}+" ' width='100px'></td><td><button class='btn btn-dark btnPayLoad'>Pay Now</button></td></tr>`;
                                 $('#tblPopupRent').append(row);
 
+
+                                $('.btnPayLoad').click(function () {
+                                    let clickedCarID = ($(this).closest('tr').children(1).eq(0).text());
+                                    let clickedDriverID = $(this).closest('tr').children(1).eq(1).text();
+                                    let clickedPaymentID = $(this).closest('tr').children(1).eq(2).text();
+
+
+                                    $.ajax({
+                                        url: `http://localhost:8080/Car_rent/Back_End_war?car_id=` + clickedCarID,
+                                        method: "GET",
+                                        success: function (resp) {
+                                            let car = resp.data;
+
+                                            $('#dailyPriceInput').text(car.freeMileageDailyPrice);
+                                            $('#dailyKmInput').text(car.freeMileageDaily);
+                                            $('#pricePerExtraKm').text(car.extraMileagePrice);
+
+
+                                            // $.ajax({
+                                            //     url: `http://localhost:8080/Back_End_war/car?carIdById=` + carId,
+                                            //     method: "GET",
+                                            //     success: function (resp) {
+                                            //         let car = resp.data;
+                                            //     },
+                                            //     error:function(error){
+                                            //
+                                            //     }
+                                            //     }
+
+
+                                            // $('#rentIdtoHide').text(clickedRentId);
+
+
+                                        },
+                                        error: function () {
+
+                                        }
+                                    });
+
+                                })
                             }
 
                             break;
@@ -109,3 +149,5 @@ $('#btnRentStatusUpdate').click(function () {
         });
 
 });
+
+

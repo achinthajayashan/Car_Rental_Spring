@@ -20,4 +20,5 @@ public interface CarService {
     void deleteCar(String carId);
 
     CustomDTO carIdGenerate();
+
 }
