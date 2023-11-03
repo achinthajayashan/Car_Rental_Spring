@@ -82,7 +82,7 @@ function bindTrEvents() {
 
 
         $.ajax({
-            url: "http://localhost:8080/Car_rent/Back_End_war/car?car_id="+id,
+            url: "http://localhost:8080/Car_rent/Back_End_war/car?carId="+id,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
