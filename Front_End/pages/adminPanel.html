@@ -92,8 +92,6 @@
                 </table>
             </section>
 
-
-
 <!--            CAR SECTION-->
 
             <section id="carsSec" class="container-fluid contentSections">
@@ -317,8 +315,6 @@
                 </section>
             </section>
 
-
-
 <!--            DRIVER SECTION-->
 
             <section id="driversSec" class="container-fluid contentSections position-relative">
@@ -440,39 +436,43 @@
                 </section>
             </section>
 
-
             <!--            RENTAL SECTION-->
+
             <section id="rentalsSec" class="container-fluid contentSections position-relative">
 
                 <section class="popupSecAdminPanel container-fluid bg-transparent z-3 position-absolute" id="rentalDetailsPopupBg">
                     <div class="bg-white d-flex flex-column z-3 rounded popupDetailDiv z-3 shadow" id="rentalDetailPopup">
-                        <h5 class="text-primary text-center mt-2 text-decoration-underline">Rental Details</h5>
+                        <h5 class="text-primary text-center mt-4 text-decoration-underline">Rental Details</h5>
                         <div class="d-flex mt-3">
                             <div class="container d-flex mt-3 ms-3">
                                 <p class="me-3"><i class="fa-solid fa-car me-2"></i>Rent ID :</p>
-                                <p class="text-primary" id="lblCarId"></p>
+                                <p class="text-primary" id="lblRentId"></p>
                             </div>
 
                             <div class="container d-flex mt-3 ms-3">
                                 <p class="me-3"><i class="fa-solid fa-car me-2"></i>Cus ID :</p>
-                                <p class="text-primary" id="lblCarId"></p>
+                                <p class="text-primary" id="lblCusId"></p>
                             </div>
 
                             <div class="container d-flex mt-3 ms-3">
                                 <p class="me-3"><i class="fa-solid fa-car me-2"></i>Pickup Date :</p>
-                                <p class="text-primary" id="lblCarId"></p>
+                                <p class="text-primary" id="lblPickupDate"></p>
                             </div>
 
                             <div class="container d-flex mt-3 ms-3">
                                 <p class="me-3"><i class="fa-solid fa-car me-2"></i>Pickup Time :</p>
-                                <p class="text-primary" id="lblCarId"></p>
+                                <p class="text-primary" id="lblPickupTime"></p>
                             </div>
                         </div>
 
                         <div class="d-flex mt-3">
                             <div class="container d-flex mt-3 ms-3">
+                                <p class="me-3"><i class="fa-solid fa-car me-2"></i>Duration :</p>
+                                <p class="text-primary" id="lblDuration"></p>
+                            </div>
+                            <div class="container d-flex mt-3 ms-3">
                                 <p class="me-3"><i class="fa-solid fa-car me-2"></i>Current Status :</p>
-                                <p class="text-primary" id="lblCarId"></p>
+                                <p class="text-primary" id="lblCurrentStatus"></p>
                             </div>
 
                             <div class="container d-flex mt-3 ms-3">
@@ -498,14 +498,18 @@
 
                                 </thead></tr>
 
+                                <tbody id="tblPopupRent"></tbody>
+
                             </table>
                         </div>
 
                         <div class="d-flex mt-3 container bottom-0">
-                            <button class="btn btn-dark w-25">Update</button>
+                            <button class="btn btn-dark w-25 me-4" id="btnRentStatusUpdate">Update</button>
+                            <button class="btn btn-danger w-25" id="btnRentalPopupClose">Close</button>
                         </div>
 
                     </div>
+
                 </section>
                 <div>
                     <table class="table mt-3">
@@ -525,8 +529,8 @@
 
             </section>
 
-
 <!--            PAYMENT SECTION-->
+
             <section id="paymentsSec" class="container-fluid contentSections">
                 <table class="table mt-3">
                     <thead class="table-header bg-primary text-white">
@@ -542,8 +546,8 @@
                 </table>
             </section>
 
-
 <!--            REPORT SECTION-->
+
             <section id="reportsSec" class="container-fluid contentSections"></section>
 <!--            <section id="dashboardSec"></section>-->
         </section>
