@@ -39,9 +39,10 @@ public class CarController {
     }
 
     @GetMapping(params = {"car_id"})
-    public Car searchCar(String car_id) {
+    public ResponseUtil searchCar(String car_id) {
         System.out.println(car_id);
-        return carService.searchCar(car_id);
+        Car carDTO =carService.searchCar(car_id);
+        return new ResponseUtil("Ok","Successfully Updated",carDTO);
     }
 
     @PutMapping

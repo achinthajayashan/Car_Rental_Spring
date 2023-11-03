@@ -76,29 +76,35 @@ function getAllRents() {
 
 
                                     $.ajax({
-                                        url: `http://localhost:8080/Car_rent/Back_End_war?car_id=` + clickedCarID,
+                                        url: "http://localhost:8080/Car_rent/Back_End_war/car?car_id=" + clickedCarID,
                                         method: "GET",
                                         success: function (resp) {
+
+                                            console.log(resp);
+
                                             let car = resp.data;
 
-                                            $('#dailyPriceInput').text(car.freeMileageDailyPrice);
-                                            $('#dailyKmInput').text(car.freeMileageDaily);
-                                            $('#pricePerExtraKm').text(car.extraMileagePrice);
+                                            let dailyPrice=car.freeMileageDailyPrice;
+                                            let dailyMillege=car.freeMileageDaily;
+                                            let extraKmPrice=car.extraMileagePrice;
 
 
-                                            // $.ajax({
-                                            //     url: `http://localhost:8080/Back_End_war/car?carIdById=` + carId,
-                                            //     method: "GET",
-                                            //     success: function (resp) {
-                                            //         let car = resp.data;
-                                            //     },
-                                            //     error:function(error){
-                                            //
-                                            //     }
-                                            //     }
+                                            $('#dailyPriceInput').val(dailyPrice);
+                                            $('#dailyKmInput').val(dailyMillege);
+                                            $('#pricePerExtraKm').val(extraKmPrice);
 
 
-                                            // $('#rentIdtoHide').text(clickedRentId);
+                                            $('#extraKms').keydown(function (event){
+
+                                                if (event.key==='Enter'){
+                                                    let extraTotal = Number($('#pricePerExtraKm').val())*Number($('#extraKms').val());
+                                                    let total =Number(extraTotal)+Number($('#dailyPriceInput').val());
+
+                                                    $('#inputTotal').val(total);
+                                                    //purchaseOrder();
+                                                }
+
+                                            });
 
 
                                         },
